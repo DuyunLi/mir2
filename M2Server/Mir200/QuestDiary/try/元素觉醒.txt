@@ -1,0 +1,896 @@
+[@try.元素觉醒]
+{
+#act
+  mov s0
+  mov s1
+  mov s2
+  mov s3
+  mov s4
+  mov s5
+  mov s6
+  mov s7
+  mov s8
+  mov s9
+  mov s10
+  mov s11
+  mov s12
+  mov s13
+  mov s14
+  mov s15
+  mov s16
+  mov s17
+  mov s18
+  mov s19
+  mov s20
+  mov s21
+  mov s22
+  mov s23
+  mov s24
+  mov s25
+  mov s26
+  mov s27
+  mov s28
+  mov s29
+  mov s30
+  mov s31
+  mov s32
+  mov s33
+  mov s34
+  mov s35
+  mov s36
+  mov s37
+  mov s38
+  mov s39
+  mov s40
+  mov s41
+  mov s42
+  mov s43
+  mov s44
+  mov s45
+  mov s46
+  mov s47
+  mov s48
+  mov s49
+
+  mov n0
+  mov n1
+  mov n2
+  mov n3
+  mov n4
+  mov n5
+  mov n6
+  mov n7
+  mov n8
+  mov n9
+  mov n10
+  mov n11
+  mov n12
+  mov n13
+  mov n14
+  mov n15
+  mov n16
+  mov n17
+  mov n18
+  mov n19
+  mov n20
+  mov n21
+  mov n22
+  mov n23
+  mov n24
+  mov n25
+  mov n26
+  mov n27
+  mov n28
+  mov n29
+  mov n30
+  mov n31
+  mov n32
+  mov n33
+  mov n34
+  mov n35
+  mov n36
+  mov n37
+  mov n38
+  mov n39
+  mov n40
+  mov n41
+  mov n42
+  mov n43
+  mov n44
+  mov n45
+  mov n46
+  mov n47
+  mov n48
+  mov n49
+
+ GetUserItemName 0 0
+ GetUserItemName 1 1
+ GetUserItemName 2 2
+ GetUserItemName 3 3
+ GetUserItemName 4 4
+ GetUserItemName 5 5
+ GetUserItemName 6 6
+ GetUserItemName 7 7
+ GetUserItemName 8 8
+ GetUserItemName 9 9
+ GetUserItemName 10 10
+ GetUserItemName 11 11
+ GetUserItemName 12 12
+ mov S13 
+ goto @try.拼接元素装备字符串
+  goto @try.选择元素觉醒装备位置
+[@try.拼接元素装备字符串]
+#if
+ equal s0 
+#act
+ inc s13 　衣服:　　　　　　　　<拥有更高的体质/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　衣服:<
+ inc s13 <$str(s0)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 衣服>　<拥有更高的体质/SCOLOR=245>
+ inc s13 \
+
+#if
+ equal s1 
+#act
+ inc s13 　武器:　　　　　　　　<拥有更高的伤害/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　武器:<
+ inc s13 <$str(s1)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 武器>　<拥有更高的伤害/SCOLOR=245>
+ inc s13 \
+
+#if
+ equal s2
+#act
+ inc s13 　勋章:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　勋章:<
+ inc s13 <$str(s2)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 勋章>
+ inc s13 \
+
+#if
+ equal s3 
+#act
+ inc s13 　项链:　　　　　　　　<拥有更多的经验/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　项链:<
+ inc s13 <$str(s3)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 项链>　<拥有更多的经验/SCOLOR=245>
+ inc s13 \
+
+#if
+ equal s4 
+#act
+ inc s13 　头盔:　　　　　　　　<拥有更高的伤害反射/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　头盔:<
+ inc s13 <$str(s4)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 头盔>　<拥有更高的伤害反射/SCOLOR=245>
+ inc s13 \
+
+#if
+ equal s5 
+#act
+ inc s13 右手镯:
+ inc s13 \
+#elseact
+ inc s13 右手镯:<
+ inc s13 <$str(s5)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 右手镯>
+ inc s13 \
+#if
+ equal s6 
+#act
+ inc s13 左手镯:
+ inc s13 \
+#elseact
+ inc s13 左手镯:<
+ inc s13 <$str(s6)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 左手镯>
+ inc s13 \
+#if
+ equal s7 
+#act
+ inc s13 右戒指:　　　　　　　　<拥有更高的忽视防御/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 右戒指:<
+ inc s13 <$str(s7)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 右戒指>　<拥有更高的忽视防御/SCOLOR=245>
+ inc s13 \
+#if
+ equal s8 
+#act
+ inc s13 左戒指:　　　　　　　　<拥有更高的忽视防御/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 左戒指:<
+ inc s13 <$str(s8)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 左戒指>　<拥有更高的忽视防御/SCOLOR=245>
+ inc s13 \
+#if
+ equal s9 
+#act
+ inc s13 护身符:
+ inc s13 \
+#elseact
+ inc s13 护身符:<
+ inc s13 <$str(s9)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 护身符>
+ inc s13 \
+#if
+ equal s10 
+#act
+ inc s13 　腰带:　　　　　　　　<拥有更高的物理伤害减少/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　腰带:<
+ inc s13 <$str(s10)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 腰带>　<拥有更高的物理伤害减少/SCOLOR=245>
+ inc s13 \
+#if
+ equal s11 
+#act
+ inc s13 　靴子:　　　　　　　　<拥有更高的魔法伤害减少/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　靴子:<
+ inc s13 <$str(s11)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 靴子>　<拥有更高的魔法伤害减少/SCOLOR=245>
+ inc s13 \
+#if
+ equal s12 
+#act
+ inc s13 　宝石:　　　　　　　　<拥有更高的致命一击/SCOLOR=245>
+ inc s13 \
+#elseact
+ inc s13 　宝石:<
+ inc s13 <$str(s12)>
+ inc s13 /@try.元素觉醒选择
+ inc s13 宝石>　<拥有更高的致命一击/SCOLOR=245>
+ inc s13 \
+[@end]
+ 
+ [@try.选择元素觉醒装备位置]
+#if
+#act 
+ openbigdialogbox 1
+#say
+ \
+在这里可以将你的装备焕发更加强大的力量!\
+当前你的装备为: \
+ \
+<$str(s13)>
+[@end]
+
+;s20 保存装备名称进行验证
+;s21 保存装备名称进行显示
+;s22 特殊位置更高属性提醒
+;n0 保存装备位置进行验证
+;n1 保存装备位置进行使用
+
+[@try.元素觉醒选择衣服];0
+#act
+  mov s21 <$str(s0)>
+  mov n1 0
+  mov s22 可以拥有更多的体质
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择武器];1
+#act
+  mov s21 <$str(s1)>
+  mov n1 1
+  mov s22 可以拥有更多的伤害加强
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择勋章];2
+#act
+  mov s21 <$str(s2)>
+  mov n1 2
+  mov s22 　
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择项链];3
+#act
+  mov s21 <$str(s3)>
+  mov n1 3
+  mov s22 可以拥有更多的附加经验
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择头盔];4
+#act
+  mov s21 <$str(s4)>
+  mov n1 4
+  mov s22 可以拥有更多的伤害反射
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择右手镯];5
+#act
+  mov s21 <$str(s5)>
+  mov n1 5
+  mov s22 　
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择左手镯];6
+#act
+  mov s21 <$str(s6)>
+  mov n1 6
+  mov s22 　
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择右戒指];7
+#act
+  mov s21 <$str(s7)>
+  mov n1 7
+  mov s22 可以拥有更多的忽视防御
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择左戒指];8
+#act
+  mov s21 <$str(s8)>
+  mov n1 8
+  mov s22 可以拥有更多的忽视防御
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择护身符];9
+#act
+  mov s21 <$str(s9)>
+  mov n1 9
+  mov s22 　
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择腰带];10
+#act
+  mov s21 <$str(s10)>
+  mov n1 10
+  mov s22 可以拥有更多的物理伤害减少
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择靴子];11
+#act
+  mov s21 <$str(s11)>
+  mov n1 11
+  mov s22 可以拥有更多的魔法伤害减少
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+[@try.元素觉醒选择宝石];12
+#act
+  mov s21 <$str(s12)>
+  mov n1 12
+  mov s22 可以拥有更多的致命一击
+  goto @try.展示元素觉醒详细信息
+  Break
+[@end]
+
+
+[@try.初始化元素觉醒需要的东西]
+#act
+mov s30 元素神石
+mov s31 强击
+mov s32 精准
+mov s33 长生
+mov s34 活力
+mov s35 冥想
+mov s36 渴血
+mov s37 破甲
+mov s38 贪婪
+mov n10 1000000
+mov n11 2000000
+mov n12 3000000
+mov n13 1000000
+mov n14 1000000
+mov n15 1000000
+mov n16 1000000
+mov n17 1000000
+mov n18 2000000
+[@try.展示元素觉醒详细信息]
+#act
+  goto @try.初始化元素觉醒需要的东西
+#say
+ \ \ \
+你当前选择的装备是:{<$str(s21)>/SCOLOR=245} {<$str(s22)>/SCOLOR=250}\ \
+<你可以使用/SCOLOR=250>{<$str(s30)>+<$str(n10)>金币/SCOLOR=250}<进行一次随机/SCOLOR=250><元素觉醒/SCOLOR=245> \
+<也可以使用/SCOLOR=250><指定属性元素神石指定属性元素觉醒/SCOLOR=245>  \ \
+
+<使用元素神石随机元素觉醒/@try.进行随机元素觉醒>,<使用此功能会将所有元素属性清空/SCOLOR=249> \ \
+
+<使用/@try.进行增加伤害元素>　{<$str(s31)>+<$str(n11)>金币/SCOLOR=250}觉醒装备元素:<增加伤害/SCOLOR=245>\
+<使用/@try.进行致命一击元素>　{<$str(s32)>+<$str(n12)>金币/SCOLOR=250}觉醒装备元素:<致命一击/SCOLOR=245>\
+<使用/@try.进行体质增强元素>　{<$str(s34)>+<$str(n14)>金币/SCOLOR=250}觉醒装备元素:<体质增强,每点增加10HP/SCOLOR=245>\
+<使用/@try.进行物理伤害减少元素>　{<$str(s33)>+<$str(n13)>金币/SCOLOR=250}觉醒装备元素:<物理伤害减少/SCOLOR=245>\
+<使用/@try.进行魔法伤害减少元素>　{<$str(s35)>+<$str(n15)>金币/SCOLOR=250}觉醒装备元素:<魔法伤害减少/SCOLOR=245>\
+<使用/@try.进行伤害反射元素>　{<$str(s36)>+<$str(n16)>金币/SCOLOR=250}觉醒装备元素:<伤害反射/SCOLOR=245>\
+<使用/@try.进行忽视防御元素>　{<$str(s37)>+<$str(n17)>金币/SCOLOR=250}觉醒装备元素:<忽视防御/SCOLOR=245>\
+<使用/@try.进行附加经验元素>　{<$str(s38)>+<$str(n18)>金币/SCOLOR=250}觉醒装备元素:<附加经验/SCOLOR=245>\
+ \ \ 
+<返回/@main>
+[@end]
+
+[@try.进行随机元素觉醒]
+#act
+ goto @try.初始化元素觉醒需要的东西
+ mov s40 <$str(s30)>
+ mov n21 <$str(n10)>
+ mov n2 <$str(n10)>
+ mov s0
+ GetUserItemName <$str(n1)> 0
+ goto @try.进行随机元素觉醒.准备
+[@end]
+[@try.进行随机元素觉醒.准备]
+#if
+ CheckItem <$str(s30)> 1
+ equal s0 <$str(s21)>
+ checkgold <$str(n10)>
+#act
+  take <$str(s30)> 1
+  take 金币 <$str(n10)>
+  mov s0 
+  SetNewItemValue <$str(n1)> 0 = 0
+  SetNewItemValue <$str(n1)> 1 = 0
+  SetNewItemValue <$str(n1)> 2 = 0
+  SetNewItemValue <$str(n1)> 3 = 0
+  SetNewItemValue <$str(n1)> 4 = 0
+  SetNewItemValue <$str(n1)> 5 = 0
+  SetNewItemValue <$str(n1)> 6 = 0
+  SetNewItemValue <$str(n1)> 7 = 0
+  movr n22 15
+  movr n23 15
+  movr n24 15
+  movr n25 15
+  mov n26 0 ;抽中一条就加一次
+  goto @try.进行随机元素觉醒.进行
+  goto @try.进行随机元素觉醒.一条都没抽中
+  goto @try.展示元素觉醒详细信息
+#elseact
+  goto @try.进行随机元素觉醒.失败
+  goto @try.展示元素觉醒详细信息
+[@end]
+
+[@try.进行随机元素觉醒.失败]
+#if
+  CheckItem <$str(s40)> 1
+  checkgold <$str(n2)>
+#act
+  SENDMSG 5 %s,你在逗我么,你刚刚身上是[<$str(s21)>]怎么突然变卦了,你现在的装备是[<$str(s0)>]!
+#elseact
+  goto @try.进行随机元素觉醒.失败1
+[@end]
+
+[@try.进行随机元素觉醒.失败1]
+#if
+  CheckItem <$str(s40)> 1
+#act
+  SENDMSG 5 %s,你在逗我么,你现在连<$str(n2)>金币都没有
+#elseact
+  SENDMSG 5 %s,你在逗我么,背包没有<$str(s40)>,无法进行随机元素觉醒
+[@end]
+[@try.进行随机元素觉醒.一条都没抽中]
+#if
+ equal n26 0
+#act
+ SENDMSG 5 %s,很遗憾,你这次没有抽中一条元素,元素被已清空
+#elseact
+ SENDMSG 7 %s,恭喜你,你这次抽中了[<$str(n26)>]条元素
+ SendCenterMsg 245 1 [元素觉醒]:%s使用了<$str(s30)>使[<$str(s21)>]觉醒了[<$str(n26)>]条元素 1
+[@end]
+
+[@try.进行随机元素觉醒.进行]
+#if
+  small n22 8
+#act
+  mov n30 <$str(n22)>
+  goto @try.元素获取位置信息
+  movr n31 <$str(n32)>
+  goto @try.进行随机元素觉醒.结果
+
+#if
+ equal n23 <$str(n22)>
+#act
+ mov n23 9
+
+#if
+ small n23 8
+#act
+  mov n30 <$str(n23)>
+  goto @try.元素获取位置信息
+  movr n31 <$str(n32)>
+  inc n31 1
+  goto @try.进行随机元素觉醒.结果
+
+#if
+ equal n24 <$str(n22)>
+#act
+ mov n24 9
+
+#if
+ equal n24 <$str(n23)>
+#act
+ mov n24 9
+ 
+#if
+ small n24 8
+#act
+  mov n30 <$str(n24)>
+  goto @try.元素获取位置信息
+  movr n31 <$str(n32)>
+  inc n31 1
+  goto @try.进行随机元素觉醒.结果
+  
+#if
+ equal n25 <$str(n22)>
+#act
+ mov n25 9
+
+#if
+ equal n25 <$str(n23)>
+#act
+ mov n25 9
+ 
+#if
+ equal n25 <$str(n24)>
+#act
+ mov n25 9
+ 
+#if
+ small n25 8
+#act
+  mov n30 <$str(n25)>
+  goto @try.元素获取位置信息
+  movr n31 <$str(n32)>
+  inc n31 1
+  goto @try.进行随机元素觉醒.结果  
+[@end]
+
+[@try.元素获取位置信息]
+#if
+ equal n30 7
+#act
+ mov s42 %
+ mov s41 附加经验
+ goto @try.元素获取位置几率.附加经验
+break
+ #if
+ equal n30 6
+#act
+  mov s42
+  mov s41 体质增强
+  goto @try.元素获取位置几率.体质增强
+  break
+#if
+ equal n30 5
+#act
+ mov s42 %
+ mov s41 伤害反射
+  goto @try.元素获取位置几率.伤害反射
+break
+
+#if
+ equal n30 4
+#act
+ mov s42 %
+ mov s41 忽视防御
+ goto @try.元素获取位置几率.忽视防御
+break
+#if
+ equal n30 3
+#act
+ mov s42 %
+ mov s41 魔法伤害减少
+  goto @try.元素获取位置几率.魔法伤害减少
+break
+#if
+ equal n30 2
+#act
+ mov s42 %
+ mov s41 物理伤害减少
+  goto @try.元素获取位置几率.物理伤害减少
+break
+
+#if
+ equal n30 1
+#act
+ mov s42 %
+ mov s41 增加伤害
+  goto @try.元素获取位置几率.增加伤害
+break
+#if
+ equal n30 0
+#act
+  mov s42 %
+  mov s41 致命一击
+  goto @try.元素获取位置几率.致命一击
+break
+[@end]
+[@try.元素获取位置几率.附加经验]
+#if
+  equal n1 3
+#act
+  mov n32 8
+  mov n33 20
+  mov n34 35
+  mov n35 99
+#elseact
+  mov n32 4
+  mov n33 7
+  mov n34 12
+  mov n35 21
+[@end]
+[@try.元素获取位置几率.体质增强]
+#if
+  equal n1 0
+#act
+  mov n32 15
+  mov n33 28
+  mov n34 56
+  mov n35 120
+#elseact
+  mov n32 8
+  mov n33 12
+  mov n34 18
+  mov n35 33
+[@end]
+[@try.元素获取位置几率.伤害反射]
+#if
+  equal n1 4
+#act
+  mov n32 3
+  mov n33 6
+  mov n34 9
+  mov n35 15
+#elseact
+  mov n32 3
+  mov n33 4
+  mov n34 5
+  mov n35 7
+[@end]
+[@try.元素获取位置几率.忽视防御] ;7 8
+#act
+  mov n32 3
+  mov n33 4
+  mov n34 5
+  mov n35 7
+  goto @try.元素获取位置几率.忽视防御1
+ [@try.元素获取位置几率.忽视防御1] 
+ #if
+ equal n1 7
+#act
+  mov n32 3
+  mov n33 5
+  mov n34 7
+  mov n35 12
+  Break
+ 
+ #if
+ equal n1 8
+#act
+  mov n32 3
+  mov n33 7
+  mov n34 10
+  mov n35 15
+  Break
+[@end]
+[@try.元素获取位置几率.魔法伤害减少]
+#if
+  equal n1 11
+#act
+  mov n32 3
+  mov n33 6
+  mov n34 9
+  mov n35 15
+#elseact
+  mov n32 3
+  mov n33 4
+  mov n34 5
+  mov n35 7
+[@end]
+[@try.元素获取位置几率.物理伤害减少]
+#if
+  equal n1 10
+#act
+  mov n32 3
+  mov n33 6
+  mov n34 9
+  mov n35 15
+#elseact
+  mov n32 3
+  mov n33 4
+  mov n34 5
+  mov n35 7
+[@end]
+[@try.元素获取位置几率.增加伤害]
+#if
+  equal n1 1
+#act
+  mov n32 10
+  mov n33 15
+  mov n34 25
+  mov n35 55
+#elseact
+  mov n32 3
+  mov n33 7
+  mov n34 11
+  mov n35 18
+[@end]
+[@try.元素获取位置几率.致命一击]
+#if
+  equal n1 12
+#act
+  mov n32 3
+  mov n33 6
+  mov n34 9
+  mov n35 15
+#elseact
+  mov n32 3
+  mov n33 4
+  mov n34 5
+  mov n35 7
+[@end]
+;n31 是获得的值
+;n32 是普通几率获得的最大值
+;n33 是一般几率获得的最大值
+;n34 是稀有几率获得的最大值
+;n35 是中彩票几率获得的最大值
+[@try.进行随机元素觉醒.结果]
+#act
+  SetNewItemValue <$str(n1)> <$str(n30)> = <$str(n31)>
+  SENDMSG 6 %s,你使用了<$str(s40)>使装备[<$str(s21)>]的元素[<$str(s41)>]觉醒为:<$str(n31)><$str(s42)>
+ SendCenterMsg 245 1 [元素觉醒]:%s使用了<$str(s30)>使[<$str(s21)>]元素[<$str(s41)>]变得更加强大 1
+#if
+  Large n31 0
+#act
+  inc n26 1
+[@end]
+
+[@try.随机增加一种元素.失败]
+#if
+ equal n31 0
+#act
+  SetNewItemValue <$str(n1)> <$str(n30)> = 0
+ SENDMSG 5 %s,很遗憾,你这次觉醒元素失败,[<$str(s41)>]元素已被清空
+ [@try.随机增加一种元素.开始]
+ #if
+ CheckItem <$str(s40)> 1
+ equal s0 <$str(s21)>
+ checkgold <$str(n2)>
+#act
+  take <$str(s40)> 1
+  take 金币 <$str(n2)>
+  mov s0 
+  movr n36 150
+  goto @try.元素获取位置信息
+  movr n31 <$str(n32)>
+  goto @try.随机增加一种元素
+  goto @try.进行随机元素觉醒.结果
+  goto @try.随机增加一种元素.失败
+  mov n26 0 ;抽中一条就加一次
+#elseact
+  goto @try.进行随机元素觉醒.失败
+  goto @try.展示元素觉醒详细信息
+[@end]
+ 
+ 
+[@try.进行增加伤害元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s31)>
+  mov n2 <$str(n11)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 1
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行致命一击元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s32)>
+  mov n2 <$str(n12)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 0
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行体质增强元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s34)>
+  mov n2 <$str(n14)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 6
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行物理伤害减少元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s33)>
+  mov n2 <$str(n13)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 2
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行魔法伤害减少元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s35)>
+  mov n2 <$str(n15)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 3
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行伤害反射元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s36)>
+  mov n2 <$str(n16)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 5
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行忽视防御元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s37)>
+  mov n2 <$str(n17)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 4
+  goto @try.随机增加一种元素.开始
+[@end]
+[@try.进行附加经验元素]
+#act
+  goto @try.初始化元素觉醒需要的东西
+  mov s40 <$str(s38)>
+  mov n2 <$str(n18)>
+  GetUserItemName <$str(n1)> 0
+  mov n30 7
+  goto @try.随机增加一种元素.开始
+[@end]
+
+[@try.随机增加一种元素]
+#if
+ large n36 148
+#act
+ movr n31 <$str(n35)>
+ break
+
+#if
+ small n36 148
+ large n36 135
+#act
+ movr n31 <$str(n34)>
+ break
+
+#if
+ small n36 135
+ large n36 100
+#act
+ movr n31 <$str(n33)>
+ break
+}

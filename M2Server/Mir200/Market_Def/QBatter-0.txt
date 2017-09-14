@@ -1,0 +1,3198 @@
+;此脚本为连击功能脚本
+[@穴位已通]
+当前穴位早已打通!
+[@穴位未通]
+当前经络的穴位尚未完全打通!
+[@经络已通]
+当前经络早已打通!
+; 更多 版  本  锁定 w w  w .Gm  6   6 . n e T
+
+
+;===============================================第一经络===============================================
+[@Pulse0-1]
+#IF
+;检查穴位所需内功等级
+CHECKOPENPULSELEVEL 0 1
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通冲脉上的幽门穴位！  
+#ELSEACT
+Break
+
+#IF
+;检查是否跨级打通穴位
+CHECKHUMANPULSE 0 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通幽门穴，获得防御上限+3。您是否要尝试打通\该穴位？ @幽门确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@幽门确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Take 舒经活络丸 1
+;打通穴位(出效果)
+OPENPULSE 0 1
+;增加属性点
+USEBONUSPOINT 11 + 3
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了冲脉上的幽门穴，修为更进一步！
+Break
+#ELSESAY
+您没有舒经活络丸，无法打通冲脉上的幽门穴位!
+#ELSEACT
+Break 
+;---------------------------------------------------------------------------------------
+[@Pulse0-2]
+#IF
+;检查穴位所需内功等级
+CHECKOPENPULSELEVEL 0 2
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通冲脉上的通谷穴位！  
+#ELSEACT
+Break
+
+#IF
+;检查是否跨级打通穴位
+CHECKHUMANPULSE 0 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通通谷穴，获得魔御上限+3。您是否要尝试打通\该穴位？ @通谷确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@通谷确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 0 2
+USEBONUSPOINT 13 + 3
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了冲脉上的通谷穴，修为更进一步！
+Break
+#ELSESAY
+您没有舒经活络丸，无法打通冲脉上的通谷穴位!
+#ELSEACT
+Break 
+;--------------------------------------------------------------------------------------
+[@Pulse0-3]
+#IF
+CHECKOPENPULSELEVEL 0 3
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通冲脉上的商曲穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 0 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通商曲穴，获得防御下限+3。您是否要尝试打通\该穴位？ @商曲确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@商曲确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 0 3
+USEBONUSPOINT 10 + 3
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了冲脉上的商曲穴，修为更进一步！
+Break
+#ELSESAY
+您没有舒经活络丸，无法打通冲脉上的商曲穴位!
+#ELSEACT
+Break 
+;--------------------------------------------------------------------------------------
+[@Pulse0-4]
+#IF
+CHECKOPENPULSELEVEL 0 4
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通冲脉上的四满穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 0 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通四满穴，获得魔御下限+3。您是否要尝试打通\该穴位？ @四满确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@四满确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 0 4
+USEBONUSPOINT 12 + 3
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了冲脉上的四满穴，修为更进一步！
+Break
+#ELSESAY
+您没有舒经活络丸，无法打通冲脉上的四满穴位!
+#ELSEACT
+Break 
+;-------------------------------------------------------------------------------------
+[@Pulse0-5]
+#IF
+CHECKOPENPULSELEVEL 0 5
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通冲脉上的横骨穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 0 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通横骨穴，获得防御上限+2。您是否要尝试打通\该穴位？ @横骨确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@横骨确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 0 5
+USEBONUSPOINT 11 + 2
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了冲脉上的横骨穴，修为更进一步！
+SendMsg 0 恭喜：%s，打通“冲脉”，一身内功算是初窥门径了！
+Break
+#ELSESAY
+您没有舒经活络丸，无法打通冲脉上的横骨穴位!
+#ELSEACT
+Break 
+;===============================================第二经络===============================================
+[@Pulse1-1]
+#IF
+CHECKOPENPULSELEVEL 1 1
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴跷上的晴明穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 1 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通晴明穴，获得魔御上限+2。您是否要尝试打通\该穴位？ @晴明确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@晴明确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @晴明几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴跷上的晴明穴位!
+#ELSEACT
+Break 
+
+[@晴明几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 1 1
+USEBONUSPOINT 13 + 2
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴跷上的晴明穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@Pulse1-2]
+#IF
+CHECKOPENPULSELEVEL 1 2
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴跷上的盘缺穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 1 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通盘缺穴，获得防御下限+2。您是否要尝试打通\该穴位？ @盘缺确认 @取消
+Break
+#ELSESAY 
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@盘缺确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @盘缺几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴跷上的盘缺穴位!
+#ELSEACT
+Break 
+
+[@盘缺几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 1 2
+USEBONUSPOINT 10 + 2
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴跷上的盘缺穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@Pulse1-3]
+#IF
+CHECKOPENPULSELEVEL 1 3
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴跷上的交信穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 1 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通交信穴，获得魔御下限+2。您是否要尝试打通\该穴位？ @交信确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@交信确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @交信几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴跷上的交信穴位!
+#ELSEACT
+Break 
+
+[@交信几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 1 3
+USEBONUSPOINT 12 + 2
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴跷上的交信穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@Pulse1-4]
+#IF
+CHECKOPENPULSELEVEL 1 4
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴跷上的照海穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 1 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通照海穴，获得防御上限+1。您是否要尝试打通\该穴位？ @照海确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@照海确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @照海几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴跷上的照海穴位!
+#ELSEACT
+Break 
+
+[@照海几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 1 4
+USEBONUSPOINT 11 + 1
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴跷上的照海穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@Pulse1-5]
+#IF
+CHECKOPENPULSELEVEL 1 5
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴跷上的然谷穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 1 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通然谷穴，获得魔御上限+1。您是否要尝试打通\该穴位？ @然谷确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@然谷确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @然谷几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴跷上的然谷穴位!
+#ELSEACT
+Break 
+
+[@然谷几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 1 5
+USEBONUSPOINT 13 + 1
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴跷上的然谷穴，修为更进一步！
+SendMsg 0 恭喜：%s，打通“阴跷”，一身内功算是略有小成了！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;===============================================第三经络===============================================
+[@Pulse2-1]
+#IF
+CHECKOPENPULSELEVEL 2 1
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴维上的廉泉穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 2 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通廉泉穴，获得防御下限+1。您是否要尝试打通\该穴位？ @廉泉确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@廉泉确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @廉泉几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴维上的廉泉穴位!
+#ELSEACT
+Break 
+
+[@廉泉几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 2 1
+USEBONUSPOINT 10 + 1
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴维上的廉泉穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@Pulse2-2]
+#IF
+CHECKOPENPULSELEVEL 2 2
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴维上的期门穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 2 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通期门穴，获得魔御下限+1。您是否要尝试打通\该穴位？ @期门确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@期门确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @期门几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴维上的期门穴位!
+#ELSEACT
+Break 
+
+[@期门几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 2 2
+USEBONUSPOINT 12 + 1
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴维上的期门穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@Pulse2-3]
+#IF
+CHECKOPENPULSELEVEL 2 3
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴维上的府舍穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 2 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通府舍穴。您是否要尝试打通\该穴位？ @府舍确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@府舍确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @府舍几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴维上的府舍穴位!
+#ELSEACT
+Break 
+
+[@府舍几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 2 3
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴维上的府舍穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@Pulse2-4]
+#IF
+CHECKOPENPULSELEVEL 2 4
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴维上的冲门穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 2 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通冲门穴。您是否要尝试打通\该穴位？ @冲门确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@冲门确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @冲门几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴维上的冲门穴位!
+#ELSEACT
+Break 
+
+[@冲门几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 2 4
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴维上的冲门穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@Pulse2-5]
+#IF
+CHECKOPENPULSELEVEL 2 5
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通阴维上的筑宾穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 2 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通筑宾穴。您是否要尝试打通\该穴位？ @筑宾确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@筑宾确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @筑宾几率
+#ELSESAY
+您没有舒经活络丸，无法打通阴维上的筑宾穴位!
+#ELSEACT
+Break 
+
+[@筑宾几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 2 5
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了阴维上的筑宾穴，修为更进一步！
+SendMsg 0 恭喜：%s，打通“阴维”，一身内功算是略有成就了！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;===============================================第四经络===============================================
+[@Pulse3-1]
+#IF
+CHECKOPENPULSELEVEL 3 1
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通任脉上的承浆穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 3 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通承浆穴。您是否要尝试打通\该穴位？ @承浆确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@承浆确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @承浆几率
+#ELSESAY
+您没有舒经活络丸，无法打通任脉上的承浆穴位!
+#ELSEACT
+Break 
+
+[@承浆几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 3 1
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了任脉上的承浆穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@Pulse3-2]
+#IF
+CHECKOPENPULSELEVEL 3 2
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通任脉上的天突穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 3 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通天突穴。您是否要尝试打通\该穴位？ @天突确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@天突确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @天突几率
+#ELSESAY
+您没有舒经活络丸，无法打通任脉上的天突穴位!
+#ELSEACT
+Break 
+
+[@天突几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 3 2
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了任脉上的天突穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@Pulse3-3]
+#IF
+CHECKOPENPULSELEVEL 3 3
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通任脉上的鸠尾穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 3 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通鸠尾穴。您是否要尝试打通\该穴位？ @鸠尾确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@鸠尾确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @鸠尾几率
+#ELSESAY
+您没有舒经活络丸，无法打通任脉上的鸠尾穴位!
+#ELSEACT
+Break 
+
+[@鸠尾几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 3 3
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了任脉上的鸠尾穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@Pulse3-4]
+#IF
+CHECKOPENPULSELEVEL 3 4
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通任脉上的气海穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 3 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通气海穴。您是否要尝试打通\该穴位？ @气海确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@气海确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @气海几率
+#ELSESAY
+您没有舒经活络丸，无法打通任脉上的气海穴位!
+#ELSEACT
+Break 
+
+[@气海几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 3 4
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了任脉上的气海穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@Pulse3-5]
+#IF
+CHECKOPENPULSELEVEL 3 5
+#ACT
+#ELSESAY
+您的内功等级不够，请努力修炼，早日打通任脉上的曲骨穴位！  
+#ELSEACT
+Break
+
+#IF
+CHECKHUMANPULSE 3 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通曲骨穴。您是否要尝试打通\该穴位？ @曲骨确认 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@曲骨确认]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @曲骨几率
+#ELSESAY
+您没有舒经活络丸，无法打通任脉上的曲骨穴位!
+#ELSEACT
+Break 
+
+[@曲骨几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+OPENPULSE 3 5
+SendMsg 0 恭喜：%s，在舒经活络丸的作用下，冲破了任脉上的曲骨穴，修为更进一步！
+SendMsg 0 恭喜：%s，打通“任脉”，一身内功算是登峰造极了！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+
+
+;===============================================修炼冲脉经络===============================================
+[@经络修炼0-0]
+#IF
+CheckJob warrior
+#ACT
+MessageBox 修炼冲脉到一重，需要一级金针5枚。修炼后，能够获得连击技招式--三\绝杀，人物魔防下限+1。 @修炼冲脉1 @取消
+Break
+#IF
+CheckJob wizard
+#ACT
+MessageBox 修炼冲脉到一重，需要一级金针5枚。修炼后，能够获得连击技招式--双\龙破，人物魔防下限+1。 @修炼冲脉1 @取消
+Break
+#IF
+CheckJob taoist
+#ACT
+MessageBox 修炼冲脉到一重，需要一级金针5枚。修炼后，能够获得连击技招式--虎\啸诀，人物魔防下限+1。 @修炼冲脉1 @取消
+Break
+
+[@修炼冲脉1]
+#IF
+CheckJob warrior
+CHECKKIMNEEDLE 一级金针 5
+#ACT
+TakeKIMNEEDLE 一级金针 5
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 0 + 1
+ADDSKILL 三绝杀 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为一重，习得连击招式"三绝杀"
+Break
+
+#IF
+CheckJob wizard
+CHECKKIMNEEDLE 一级金针 5
+#ACT
+TakeKIMNEEDLE 一级金针 5
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 0 + 1
+ADDSKILL 双龙破 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为一重，习得连击招式"双龙破"
+Break
+
+#IF
+CheckJob taoist
+CHECKKIMNEEDLE 一级金针 5
+#ACT
+TakeKIMNEEDLE 一级金针 5
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 0 + 1
+ADDSKILL 虎啸诀 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为一重，习得连击招式"虎啸诀"
+Break
+#ELSESAY
+你还缺少修炼冲脉的材料!
+#ELSEACT
+Break
+;---------------------------------------------
+[@经络修炼0-1]
+#IF
+#ACT
+MessageBox 修炼冲脉到二重，需要二级金针3枚。修炼后，防御下限+1，魔防下限+1。 @修炼冲脉2 @取消
+Break
+
+[@修炼冲脉2]
+#IF
+CHECKKIMNEEDLE 二级金针 3
+#ACT
+TakeKIMNEEDLE  二级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+CHANGEPULSELEVEL 0 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 三绝杀 = 2
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 双龙破 = 2
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 虎啸诀 = 2
+Break
+
+;---------------------------------------------
+[@经络修炼0-2]
+#IF
+#ACT
+MessageBox 修炼冲脉到三重，需要三级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+2。 @修炼冲脉3 @取消
+Break
+
+[@修炼冲脉3]
+#IF
+CHECKKIMNEEDLE 三级金针 2
+#ACT
+TakeKIMNEEDLE 三级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 2
+CHANGEPULSELEVEL 0 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 三绝杀 = 3
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 双龙破 = 3
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 虎啸诀 = 3
+Break
+
+;---------------------------------------------
+[@经络修炼0-3]
+#IF
+#ACT
+MessageBox 修炼冲脉到四重，需要四级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+5。 @修炼冲脉4 @取消
+Break
+
+[@修炼冲脉4]
+#IF
+CHECKKIMNEEDLE 四级金针 2
+#ACT
+TakeKIMNEEDLE 四级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 5
+CHANGEPULSELEVEL 0 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 三绝杀 = 4
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 双龙破 = 4
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 虎啸诀 = 4
+Break
+
+;---------------------------------------------
+[@经络修炼0-4]
+#IF
+#ACT
+MessageBox 修炼冲脉到五重，需要五级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+9。 @修炼冲脉5 @取消
+Break
+
+[@修炼冲脉5]
+#IF
+CHECKKIMNEEDLE 五级金针 2
+#ACT
+TakeKIMNEEDLE 五级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 9
+CHANGEPULSELEVEL 0 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"冲脉"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 三绝杀 = 5
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 双龙破 = 5
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 虎啸诀 = 5
+Break
+
+
+;===============================================修炼阴跷经络===============================================
+[@经络修炼1-0]
+#IF
+CheckJob warrior
+#ACT
+MessageBox 修炼阴跷到一重，需要一级金针6枚。修炼后，能够获得连击技招式--追\心刺，人物魔防下限+1。   @修炼阴跷1 @取消
+Break
+#IF
+CheckJob wizard
+#ACT
+MessageBox 修炼阴跷到一重，需要一级金针6枚。修炼后，能够获得连击技招式--凤\舞祭，人物魔防下限+1。   @修炼阴跷1 @取消
+Break
+#IF
+CheckJob taoist
+#ACT
+MessageBox 修炼阴跷到一重，需要一级金针6枚。修炼后，能够获得连击技招式--八\卦掌，人物魔防下限+1。   @修炼阴跷1 @取消
+Break
+
+[@修炼阴跷1]
+#IF
+CheckJob warrior
+CHECKKIMNEEDLE 一级金针 6
+#ACT
+TakeKIMNEEDLE 一级金针 6
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 1 + 1
+ADDSKILL 追心刺 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为一重，习得连击招式"追心刺"
+Break
+
+#IF
+CheckJob wizard
+CHECKKIMNEEDLE 一级金针 6
+#ACT
+TakeKIMNEEDLE 一级金针 6
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 1 + 1
+ADDSKILL 凤舞祭 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为一重，习得连击招式"凤舞祭"
+Break
+
+#IF
+CheckJob taoist
+CHECKKIMNEEDLE 一级金针 6
+#ACT
+TakeKIMNEEDLE 一级金针 6
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 1 + 1
+ADDSKILL 八卦掌 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为一重，习得连击招式"八卦掌"
+Break
+#ELSESAY
+你还缺少修炼阴跷的材料!
+#ELSEACT
+Break
+;---------------------------------------------
+[@经络修炼1-1]
+#IF
+#ACT
+MessageBox 修炼阴跷到二重，需要二级金针3枚。修炼后，防御下限+1，魔防下限+1。 @修炼阴跷2 @取消
+Break
+
+[@修炼阴跷2]
+#IF
+CHECKKIMNEEDLE 二级金针 3
+#ACT
+TakeKIMNEEDLE  二级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+CHANGEPULSELEVEL 1 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 追心刺 = 2
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 凤舞祭 = 2
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 八卦掌 = 2
+Break
+
+;---------------------------------------------
+[@经络修炼1-2]
+#IF
+#ACT
+MessageBox 修炼阴跷到三重，需要三级金针3枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+2。 @修炼阴跷3 @取消
+Break
+
+[@修炼阴跷3]
+#IF
+CHECKKIMNEEDLE 三级金针 3
+#ACT
+TakeKIMNEEDLE  三级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 2
+CHANGEPULSELEVEL 1 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 追心刺 = 3
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 凤舞祭 = 3
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 八卦掌 = 3
+Break
+
+
+;---------------------------------------------
+[@经络修炼1-3]
+#IF
+#ACT
+MessageBox 修炼阴跷到四重，需要四级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+5。 @修炼阴跷4 @取消
+Break
+
+[@修炼阴跷4]
+#IF
+CHECKKIMNEEDLE 四级金针 2
+#ACT
+TakeKIMNEEDLE 四级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 5
+CHANGEPULSELEVEL 1 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 追心刺 = 4
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 凤舞祭 = 4
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 八卦掌 = 4
+Break
+
+;---------------------------------------------
+[@经络修炼1-4]
+#IF
+#ACT
+MessageBox 修炼阴跷到五重，需要五级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+9。 @修炼阴跷5 @取消
+Break
+
+[@修炼阴跷5]
+#IF
+CHECKKIMNEEDLE 五级金针 2
+#ACT
+TakeKIMNEEDLE 五级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 9
+CHANGEPULSELEVEL 1 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴跷"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 追心刺 = 5
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 凤舞祭 = 5
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 八卦掌 = 5
+Break
+
+
+;===============================================修炼阴维经络===============================================
+[@经络修炼2-0]
+#IF
+CheckJob warrior
+#ACT
+MessageBox 修炼阴维到一重，需要一级金针7枚。修炼后，能够获得连击技招式--断\岳斩，人物魔防下限+1。   @修炼阴维1 @取消
+Break
+#IF
+CheckJob wizard
+#ACT
+MessageBox 修炼阴维到一重，需要一级金针7枚。修炼后，能够获得连击技招式--惊\雷爆，人物魔防下限+1。   @修炼阴维1 @取消
+Break
+#IF
+CheckJob taoist
+#ACT
+MessageBox 修炼阴维到一重，需要一级金针7枚。修炼后，能够获得连击技招式--三\焰咒，人物魔防下限+1。   @修炼阴维1 @取消
+Break
+
+[@修炼阴维1]
+#IF
+CheckJob warrior
+CHECKKIMNEEDLE 一级金针 7
+#ACT
+TakeKIMNEEDLE 一级金针 7
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 2 + 1
+ADDSKILL 断岳斩 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为一重，习得连击招式"断岳斩"
+Break
+
+#IF
+CheckJob wizard
+CHECKKIMNEEDLE 一级金针 7
+#ACT
+TakeKIMNEEDLE 一级金针 7
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 2 + 1
+ADDSKILL 惊雷爆 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为一重，习得连击招式"惊雷爆"
+Break
+
+#IF
+CheckJob taoist
+CHECKKIMNEEDLE 一级金针 7
+#ACT
+TakeKIMNEEDLE 一级金针 7
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 2 + 1
+ADDSKILL 三焰咒 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为一重，习得连击招式"三焰咒"
+Break
+#ELSESAY
+你还缺少修炼阴维的材料!
+#ELSEACT
+Break
+
+;---------------------------------------------
+[@经络修炼2-1]
+#IF
+#ACT
+MessageBox 修炼阴维到二重，需要二级金针3枚。修炼后，防御下限+1，魔防下限+1。 @修炼阴维2 @取消
+Break
+
+[@修炼阴维2]
+#IF
+CHECKKIMNEEDLE 二级金针 3
+#ACT
+TakeKIMNEEDLE  二级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+CHANGEPULSELEVEL 2 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 断岳斩 = 2
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 惊雷爆 = 2
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 三焰咒 = 2
+Break
+
+;---------------------------------------------
+[@经络修炼2-2]
+#IF
+#ACT
+MessageBox 修炼阴维到三重，需要三级金针3枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+2。 @修炼阴维3 @取消
+Break
+
+[@修炼阴维3]
+#IF
+CHECKKIMNEEDLE 三级金针 3
+#ACT
+TakeKIMNEEDLE  三级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 2
+CHANGEPULSELEVEL 2 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 断岳斩 = 3
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 惊雷爆 = 3
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 三焰咒 = 3
+Break
+
+;---------------------------------------------
+[@经络修炼2-3]
+#IF
+#ACT
+MessageBox 修炼阴维到四重，需要四级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+5。 @修炼阴维4 @取消
+Break
+
+[@修炼阴维4]
+#IF
+CHECKKIMNEEDLE 四级金针 2
+#ACT
+TakeKIMNEEDLE 四级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 5
+CHANGEPULSELEVEL 2 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 断岳斩 = 4
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 惊雷爆 = 4
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 三焰咒 = 4
+Break
+;---------------------------------------------
+[@经络修炼2-4]
+#IF
+#ACT
+MessageBox 修炼阴维到五重，需要五级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，伤害吸收+9。 @修炼阴维5 @取消
+Break
+
+[@修炼阴维5]
+#IF
+CHECKKIMNEEDLE 五级金针 2
+#ACT
+TakeKIMNEEDLE 五级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 9
+CHANGEPULSELEVEL 2 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"阴维"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 断岳斩 = 5
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 惊雷爆 = 5
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 三焰咒 = 5
+Break
+
+
+;===============================================修炼任脉经络===============================================
+[@经络修炼3-0]
+#IF
+CheckJob warrior
+#ACT
+MessageBox 修炼任脉到一重，需要一级金针8枚。修炼后，能够获得连击技招式--横\扫千军，人物魔防下限+1。 @修炼任脉1 @取消
+Break
+#IF
+CheckJob wizard
+#ACT
+MessageBox 修炼任脉到一重，需要一级金针8枚。修炼后，能够获得连击技招式--冰\天雪地，人物魔防下限+1。 @修炼任脉1 @取消
+Break
+#IF
+CheckJob taoist
+#ACT
+MessageBox 修炼任脉到一重，需要一级金针8枚。修炼后，能够获得连击技招式--万\剑归宗，人物魔防下限+1。 @修炼任脉1 @取消
+Break
+
+[@修炼任脉1]
+#IF
+CheckJob warrior
+CHECKKIMNEEDLE 一级金针 8
+#ACT
+TakeKIMNEEDLE 一级金针 8
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 3 + 1
+ADDSKILL 横扫千军 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为一重，习得连击招式"横扫千军"
+Break
+
+#IF
+CheckJob wizard
+CHECKKIMNEEDLE 一级金针 8
+#ACT
+TakeKIMNEEDLE 一级金针 8
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 3 + 1
+ADDSKILL 冰天雪地 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为一重，习得连击招式"冰天雪地"
+Break
+
+#IF
+CheckJob taoist
+CHECKKIMNEEDLE 一级金针 8
+#ACT
+TakeKIMNEEDLE 一级金针 8
+USEBONUSPOINT 12 + 1
+CHANGEPULSELEVEL 3 + 1
+ADDSKILL 万剑归宗 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为一重，习得连击招式"万剑归宗"
+Break
+#ELSESAY
+缺少修炼任脉的材料!
+
+;---------------------------------------------
+[@经络修炼3-1]
+#IF
+#ACT
+MessageBox 修炼任脉到二重，需要二级金针3枚。修炼后，防御下限+1，魔防下限+1。 @修炼任脉2 @取消
+Break
+
+[@修炼任脉2]
+#IF
+CHECKKIMNEEDLE 二级金针 3
+#ACT
+TakeKIMNEEDLE  二级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+CHANGEPULSELEVEL 3 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 横扫千军 = 2
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 冰天雪地 = 2
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 万剑归宗 = 2
+Break
+;---------------------------------------------
+[@经络修炼3-2]
+#IF
+#ACT
+MessageBox 修炼任脉到三重，需要三级金针3枚。修炼后，获得防御下限+1、魔防下\限+1，人物吸收伤害+2。 @修炼任脉3 @取消
+Break
+
+[@修炼任脉3]
+#IF
+CHECKKIMNEEDLE 三级金针 3
+#ACT
+TakeKIMNEEDLE  三级金针 3
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 2
+CHANGEPULSELEVEL 3 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 横扫千军 = 3
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 冰天雪地 = 3
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 万剑归宗 = 3
+Break
+;---------------------------------------------
+[@经络修炼3-3]
+#IF
+#ACT
+MessageBox 修炼任脉到四重，需要四级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，人物吸收伤害+5。 @修炼任脉4 @取消
+Break
+
+[@修炼任脉4]
+#IF
+CHECKKIMNEEDLE 四级金针 2
+#ACT
+TakeKIMNEEDLE 四级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 5
+CHANGEPULSELEVEL 3 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 横扫千军 = 4
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 冰天雪地 = 4
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 万剑归宗 = 4
+Break
+;---------------------------------------------
+[@经络修炼3-4]
+#IF
+#ACT
+MessageBox 修炼任脉到五重，需要五级金针2枚。修炼后，获得防御下限+1、魔防下\限+1，人物吸收伤害+9。 @修炼任脉5 @取消
+Break
+
+[@修炼任脉5]
+#IF
+CHECKKIMNEEDLE 五级金针 2
+#ACT
+TakeKIMNEEDLE 五级金针 2
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 9
+CHANGEPULSELEVEL 3 + 1
+SendMsg 0 恭喜：%s，通过不懈的努力，将"任脉"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+缺少修炼任脉的材料!
+#ELSEACT
+Break
+
+#IF
+CheckJob warrior
+#ACT
+SKILLLEVEL 横扫千军 = 5
+Break
+
+#IF
+CheckJob wizard
+#ACT
+SKILLLEVEL 冰天雪地 = 5
+Break
+
+#IF
+CheckJob taoist
+#ACT
+SKILLLEVEL 万剑归宗 = 5
+Break
+
+;===============================================英雄第一经络===============================================
+[@HeroPulse0-1]
+#IF
+;检查穴位所需内功等级
+Hero.CHECKOPENPULSELEVEL 0 1
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通冲脉上的幽门穴位！  
+#ELSEACT
+Break
+
+#IF
+;检查是否跨级打通穴位
+Hero.CHECKHUMANPULSE 0 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通幽门穴，后获得防御上限+3。您是否要尝试打\通该穴位？ @英雄幽门 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄幽门]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Take 舒经活络丸 1
+;打通穴位(出效果)
+Hero.OPENPULSE 0 1
+;增加属性点
+Hero.USEBONUSPOINT 11 + 3
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了冲脉上的幽门穴，获得防御属性提升，修为更进一步！
+Break
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通冲脉上的幽门穴位!
+#ELSEACT
+Break 
+;---------------------------------------------------------------------------------------
+[@HeroPulse0-2]
+#IF
+Hero.CHECKOPENPULSELEVEL 0 2
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通冲脉上的通谷穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 0 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通通谷穴，后获得魔御上限+3。您是否要尝试打\通该穴位？ @英雄通谷 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄通谷]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 0 2
+Hero.USEBONUSPOINT 13 + 3 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了冲脉上的通谷穴，修为更进一步！
+Break
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通冲脉上的通谷穴位!
+#ELSEACT
+Break 
+;--------------------------------------------------------------------------------------
+[@HeroPulse0-3]
+#IF
+Hero.CHECKOPENPULSELEVEL 0 3
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通冲脉上的商曲穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 0 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通商曲穴，后获得防御下限+3。您是否要尝试打\通该穴位？ @英雄商曲 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄商曲]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 0 3 
+Hero.USEBONUSPOINT 10 + 3 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了冲脉上的商曲穴，修为更进一步！
+Break
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通冲脉上的商曲穴位!
+#ELSEACT
+Break 
+;--------------------------------------------------------------------------------------
+[@HeroPulse0-4]
+#IF
+Hero.CHECKOPENPULSELEVEL 0 4
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通冲脉上的四满穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 0 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通四满穴，后获得魔御下限+3。您是否要尝试打\通该穴位？ @英雄四满 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄四满]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 0 4 
+Hero.USEBONUSPOINT 12 + 3 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了冲脉上的四满穴，修为更进一步！
+Break
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通冲脉上的四满穴位!
+#ELSEACT
+Break 
+;-------------------------------------------------------------------------------------
+[@HeroPulse0-5]
+#IF
+Hero.CHECKOPENPULSELEVEL 0 5
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通冲脉上的横骨穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 0 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通横骨穴，后获得防御上限+2。您是否要尝试打\通该穴位？ @英雄横骨 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄横骨]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 0 5 
+Hero.USEBONUSPOINT 11 + 2
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了冲脉上的横骨穴，修为更进一步！
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，打通“冲脉”，一身内功算是初窥门径了！
+Break
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通冲脉上的横骨穴位!
+#ELSEACT
+Break 
+
+;===============================================英雄第二经络===============================================
+[@HeroPulse1-1]
+#IF
+Hero.CHECKOPENPULSELEVEL 1 1
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴跷上的晴明穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 1 1 
+#ACT
+MessageBox 使用舒经活络丸有几率打通晴明穴，后获得魔御上限+2。您是否要尝试打\通该穴位？ @英雄晴明 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄晴明]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄晴明几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴跷上的晴明穴位!
+#ELSEACT
+Break 
+
+[@英雄晴明几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 1 1 
+Hero.USEBONUSPOINT 13 + 2 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴跷上的晴明穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@HeroPulse1-2]
+#IF
+Hero.CHECKOPENPULSELEVEL 1 2
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴跷上的盘缺穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 1 2 
+#ACT
+MessageBox 使用舒经活络丸有几率打通盘缺穴，后获得防御下限+2。您是否要尝试打\通该穴位？ @英雄盘缺 @取消
+Break
+#ELSESAY 
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄盘缺]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄盘缺几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴跷上的盘缺穴位!
+#ELSEACT
+Break 
+
+[@英雄盘缺几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 1 2 
+Hero.USEBONUSPOINT 10 + 2 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴跷上的盘缺穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@HeroPulse1-3]
+#IF
+Hero.CHECKOPENPULSELEVEL 1 3
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴跷上的交信穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 1 3 
+#ACT
+MessageBox 使用舒经活络丸有几率打通交信穴，后获得魔御下限+2。您是否要尝试打\通该穴位？ @英雄交信 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄交信]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄交信几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴跷上的交信穴位!
+#ELSEACT
+Break 
+
+[@英雄交信几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 1 3 
+Hero.USEBONUSPOINT 12 + 2 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴跷上的交信穴，修为更进一步！
+Break
+#ELSEACT 
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@HeroPulse1-4]
+#IF
+Hero.CHECKOPENPULSELEVEL 1 4
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴跷上的照海穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 1 4 
+#ACT
+MessageBox 使用舒经活络丸有几率打通照海穴，后获得防御上限+1。您是否要尝试打\通该穴位？ @英雄照海 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄照海]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄照海几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴跷上的照海穴位!
+#ELSEACT
+Break 
+
+[@英雄照海几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 1 4 
+Hero.USEBONUSPOINT 11 + 1 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴跷上的照海穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------
+[@HeroPulse1-5]
+#IF
+Hero.CHECKOPENPULSELEVEL 1 5
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴跷上的然谷穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 1 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通然谷穴，后获得魔御上限+1。您是否要尝试打\通该穴位？ @英雄然谷 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄然谷]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄然谷几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴跷上的然谷穴位!
+#ELSEACT
+Break 
+
+[@英雄然谷几率]
+#IF
+Random 2
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 1 5 
+Hero.USEBONUSPOINT 13 + 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴跷上的然谷穴，修为更进一步！
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，打通“阴跷”，一身内功算是略有小成了！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+
+;===============================================英雄第三经络===============================================
+[@HeroPulse2-1]
+#IF
+Hero.CHECKOPENPULSELEVEL 2 1 
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴维上的廉泉穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 2 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通廉泉穴，后获得防御下限+1。您是否要尝试打\通该穴位？ @英雄廉泉 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄廉泉]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Goto @确认廉泉几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴维上的廉泉穴位!
+#ELSEACT
+Break 
+
+[@确认廉泉几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 2 1 
+Hero.USEBONUSPOINT 10 + 1 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴维上的廉泉穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@HeroPulse2-2]
+#IF
+Hero.CHECKOPENPULSELEVEL 2 2 
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴维上的期门穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 2 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通期门穴，后获得魔御下限+1。您是否要尝试打\通该穴位？ @英雄期门  @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄期门]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Goto @英雄期门几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴维上的期门穴位!
+#ELSEACT
+Break 
+
+[@英雄期门几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 2 2 
+Hero.USEBONUSPOINT 12 + 1 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴维上的期门穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@HeroPulse2-3]
+#IF
+Hero.CHECKOPENPULSELEVEL 2 3 
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴维上的府舍穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 2 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通府舍穴。您是否要尝试打通该穴位？ @英雄府舍 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄府舍]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Goto @英雄府舍几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴维上的府舍穴位!
+#ELSEACT
+Break 
+
+[@英雄府舍几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 2 3 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴维上的府舍穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@HeroPulse2-4]
+#IF
+Hero.CHECKOPENPULSELEVEL 2 4 
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴维上的冲门穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 2 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通冲门穴。您是否要尝试打通该穴位？ @英雄冲门 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄冲门]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Goto @英雄冲门几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴维上的冲门穴位!
+#ELSEACT
+Break 
+
+[@英雄冲门几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 2 4 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴维上的冲门穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;--------------------------------------------------------------------------------
+[@HeroPulse2-5]
+#IF
+Hero.CHECKOPENPULSELEVEL 2 5 
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通阴维上的筑宾穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 2 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通筑宾穴。您是否要尝试打通该穴位？ @英雄筑宾 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄筑宾]
+#IF
+CheckItem 舒经活络丸 1 
+#ACT
+Goto @英雄筑宾几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通阴维上的筑宾穴位!
+#ELSEACT
+Break 
+
+[@英雄筑宾几率]
+#IF
+Random 3
+#ACT
+Take 舒经活络丸 1 
+Hero.OPENPULSE 2 5 
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了阴维上的筑宾穴，修为更进一步！
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，打通“阴维”，一身内功算是略有成就了！
+Break
+#ELSEACT
+Take 舒经活络丸 1 
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+
+;===============================================英雄第四经络===============================================
+[@HeroPulse3-1]
+#IF
+Hero.CHECKOPENPULSELEVEL 3 1
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通任脉上的承浆穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 3 1
+#ACT
+MessageBox 使用舒经活络丸有几率打通承浆穴。您是否要尝试打通该穴位？ @英雄承浆 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄承浆]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄承浆几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通任脉上的承浆穴位!
+#ELSEACT
+Break 
+
+[@英雄承浆几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+Hero.OPENPULSE 3 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了任脉上的承浆穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@HeroPulse3-2]
+#IF
+Hero.CHECKOPENPULSELEVEL 3 2
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通任脉上的天突穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 3 2
+#ACT
+MessageBox 使用舒经活络丸有几率打通天突穴。您是否要尝试打通该穴位？ @英雄天突 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄天突]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄天突几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通任脉上的天突穴位!
+#ELSEACT
+Break 
+
+[@英雄天突几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+Hero.OPENPULSE 3 2
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了任脉上的天突穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@HeroPulse3-3]
+#IF
+Hero.CHECKOPENPULSELEVEL 3 3
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通任脉上的鸠尾穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 3 3
+#ACT
+MessageBox 使用舒经活络丸有几率打通鸠尾穴。您是否要尝试打通该穴位？ @英雄鸠尾 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄鸠尾]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄鸠尾几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通任脉上的鸠尾穴位!
+#ELSEACT
+Break 
+
+[@英雄鸠尾几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+Hero.OPENPULSE 3 3
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了任脉上的鸠尾穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@HeroPulse3-4]
+#IF
+Hero.CHECKOPENPULSELEVEL 3 4
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通任脉上的气海穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 3 4
+#ACT
+MessageBox 使用舒经活络丸有几率打通气海穴。您是否要尝试打通该穴位？ @英雄气海 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄气海]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄气海几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通任脉上的气海穴位!
+#ELSEACT
+Break 
+
+[@英雄气海几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+Hero.OPENPULSE 3 4
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了任脉上的气海穴，修为更进一步！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+Break
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+;-----------------------------------------------------------------------------
+[@HeroPulse3-5]
+#IF
+Hero.CHECKOPENPULSELEVEL 3 5
+#ACT
+#ELSESAY
+英雄的内功等级不够，请努力修炼，早日打通任脉上的曲骨穴位！  
+#ELSEACT
+Break
+
+#IF
+Hero.CHECKHUMANPULSE 3 5
+#ACT
+MessageBox 使用舒经活络丸有几率打通曲骨穴。您是否要尝试打通该穴位？ @英雄曲骨 @取消
+Break
+#ELSESAY
+您需要先打通上一穴位！
+#ELSEACT
+Break
+
+[@英雄曲骨]
+#IF
+CheckItem 舒经活络丸 1
+#ACT
+Goto @英雄曲骨几率
+#ELSESAY
+您的包裹内没有舒经活络丸，无法打通任脉上的曲骨穴位!
+#ELSEACT
+Break 
+
+[@英雄曲骨几率]
+#IF
+Random 4
+#ACT
+Take 舒经活络丸 1
+Hero.OPENPULSE 3 5
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，在舒经活络丸的作用下，冲破了任脉上的曲骨穴，修为更进一步！
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，打通“任脉”，一身内功算是登峰造极了！
+Break
+#ELSEACT
+Take 舒经活络丸 1
+#ELSESAY
+很抱歉，使用舒经活络丸失败，没有冲破此穴，请重新尝试！
+
+
+;===============================================英雄修炼一===============================================
+[@Hero修炼0-0]
+#IF
+Hero.CheckJob warrior
+Hero.CHECKPULSEEXP 0 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 0 + 1
+Hero.DECPULSEEXP 0 0
+Hero.ADDSKILL 三绝杀 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为一重，习得连击招式"三绝杀"
+Break
+
+#IF
+Hero.CheckJob wizard
+Hero.CHECKPULSEEXP 0 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 0 + 1
+Hero.DECPULSEEXP 0 0
+Hero.ADDSKILL 双龙破 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为一重，习得连击招式"双龙破"
+Break
+
+#IF
+Hero.CheckJob taoist
+Hero.CHECKPULSEEXP 0 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 0 + 1
+Hero.DECPULSEEXP 0 0
+Hero.ADDSKILL 虎啸诀 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为一重，习得连击招式"虎啸诀"
+Break
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+;---------------------------------------------
+[@Hero修炼0-1]
+#IF
+Hero.CHECKPULSEEXP 0 1
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.CHANGEPULSELEVEL 0 + 1
+Hero.DECPULSEEXP 0 1
+goto @条件符合0-1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合0-1]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 三绝杀 = 2
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 双龙破 = 2
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 虎啸诀 = 2
+Break
+;---------------------------------------------
+[@Hero修炼0-2]
+#IF
+Hero.CHECKPULSEEXP 0 2
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 2
+Hero.CHANGEPULSELEVEL 0 + 1
+Hero.DECPULSEEXP 0 2
+goto @条件符合0-2
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合0-2]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 三绝杀 = 3
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 双龙破 = 3
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 虎啸诀 = 3
+Break
+;---------------------------------------------
+[@Hero修炼0-3]
+#IF
+Hero.CHECKPULSEEXP 0 3
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 5
+Hero.CHANGEPULSELEVEL 0 + 1
+Hero.DECPULSEEXP 0 3
+goto @条件符合0-3
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合0-3]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 三绝杀 = 4
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 双龙破 = 4
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 虎啸诀 = 4
+Break
+;---------------------------------------------
+[@Hero修炼0-4]
+#IF
+Hero.CHECKPULSEEXP 0 4
+#ACT
+USEBONUSPOINT 12 + 1
+USEBONUSPOINT 10 + 1
+USEBONUSPOINT 14 + 9
+CHANGEPULSELEVEL 0 + 1
+DECPULSEEXP 0 4
+goto @条件符合0-4
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"冲脉"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合0-4]
+#IF
+Hero.CheckJob warrior
+#ACT
+SKILLLEVEL 三绝杀 = 5
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+SKILLLEVEL 双龙破 = 5
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+SKILLLEVEL 虎啸诀 = 5
+Break
+
+
+;===============================================英雄修炼二===============================================
+[@Hero修炼1-0]
+#IF
+Hero.CheckJob warrior
+Hero.CHECKPULSEEXP 1 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 0
+Hero.ADDSKILL 追心刺 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为一重，习得连击招式"追心刺"
+Break
+
+#IF
+Hero.CheckJob wizard
+Hero.CHECKPULSEEXP 1 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 0
+Hero.ADDSKILL 凤舞祭 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为一重，习得连击招式"凤舞祭"
+Break
+
+#IF
+Hero.CheckJob taoist
+Hero.CHECKPULSEEXP 1 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 0
+Hero.ADDSKILL 八卦掌 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为一重，习得连击招式"八卦掌"
+Break
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+;---------------------------------------------
+[@Hero修炼1-1]
+#IF
+Hero.CHECKPULSEEXP 1 1
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 1
+goto @条件符合1-1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合1-1]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 追心刺 = 2
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 凤舞祭 = 2
+Break
+
+#IF
+CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 八卦掌 = 2
+Break
+
+;---------------------------------------------
+[@Hero修炼1-2]
+#IF
+Hero.CHECKPULSEEXP 1 2
+#ACT 
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 2
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 2
+goto @条件符合1-2
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+
+[@条件符合1-2]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 追心刺 = 3
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 凤舞祭 = 3
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 八卦掌 = 3
+Break
+;---------------------------------------------
+[@Hero修炼1-3]
+#IF
+Hero.CHECKPULSEEXP 1 3
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 5
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 3
+goto @条件符合1-3
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合1-3]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 追心刺 = 4
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 凤舞祭 = 4
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 八卦掌 = 4
+Break
+
+;---------------------------------------------
+[@Hero修炼1-4]
+#IF
+Hero.CHECKPULSEEXP 1 4
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 9
+Hero.CHANGEPULSELEVEL 1 + 1
+Hero.DECPULSEEXP 1 4
+goto @条件符合1-4
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴跷"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合1-4]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 追心刺 = 5
+Break
+
+#IF
+CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 凤舞祭 = 5
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 八卦掌 = 5
+Break
+
+
+;===============================================英雄修炼三===============================================
+[@Hero修炼2-0]
+#IF
+Hero.CheckJob warrior
+Hero.CHECKPULSEEXP 2 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 0
+Hero.ADDSKILL 断岳斩 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为一重，习得连击招式"断岳斩"
+Break
+
+#IF
+Hero.CheckJob wizard
+Hero.CHECKPULSEEXP 2 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 0
+Hero.ADDSKILL 惊雷爆 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为一重，习得连击招式"惊雷爆"
+Break
+
+#IF
+Hero.CheckJob taoist
+Hero.CHECKPULSEEXP 2 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 0
+Hero.ADDSKILL 三焰咒 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为一重，习得连击招式"三焰咒"
+Break
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+;---------------------------------------------
+[@Hero修炼2-1]
+#IF
+Hero.CHECKPULSEEXP 2 1
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 1
+goto @条件符合2-1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合2-1]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 断岳斩 = 2
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 惊雷爆 = 2
+Break
+
+#IF
+CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 三焰咒 = 2
+Break
+
+;---------------------------------------------
+[@Hero修炼2-2]
+#IF
+Hero.CHECKPULSEEXP 2 2
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 2
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 2
+goto @条件符合2-2
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合2-2]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 断岳斩 = 3
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 惊雷爆 = 3
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 三焰咒 = 3
+Break
+
+;---------------------------------------------
+[@Hero修炼2-3]
+#IF
+Hero.CHECKPULSEEXP 2 3
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 5
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 3
+goto @条件符合2-3
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合2-3]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 断岳斩 = 4
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 惊雷爆 = 4
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 三焰咒 = 4
+Break
+;---------------------------------------------
+[@Hero修炼2-4]
+#IF
+Hero.CHECKPULSEEXP 2 4
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 9
+Hero.CHANGEPULSELEVEL 2 + 1
+Hero.DECPULSEEXP 2 4
+goto @条件符合2-4
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"阴维"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合2-4]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 断岳斩 = 5
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 惊雷爆 = 5
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 三焰咒 = 5
+Break
+
+;===============================================英雄修炼四===============================================
+[@Hero修炼3-0]
+#IF
+Hero.CheckJob warrior
+Hero.CHECKPULSEEXP 3 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 0
+Hero.ADDSKILL 横扫千军 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为一重，习得连击招式"横扫千军"
+Break
+
+#IF
+Hero.CheckJob wizard
+Hero.CHECKPULSEEXP 3 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 0
+Hero.ADDSKILL 冰天雪地 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为一重，习得连击招式"冰天雪地"
+Break
+
+#IF
+Hero.CheckJob taoist
+Hero.CHECKPULSEEXP 3 0
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 0
+Hero.ADDSKILL 万剑归宗 1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为一重，习得连击招式"万剑归宗"
+Break
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+;---------------------------------------------
+[@Hero修炼3-1]
+#IF
+Hero.CHECKPULSEEXP 3 1
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 1
+goto @条件符合3-1
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为二重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合3-1]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 横扫千军 = 2
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 冰天雪地 = 2
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 万剑归宗 = 2
+Break
+;---------------------------------------------
+[@Hero修炼3-2]
+#IF
+Hero.CHECKPULSEEXP 3 2
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 2
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 2
+goto @条件符合3-2
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为三重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合3-2]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 横扫千军 = 3
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 冰天雪地 = 3
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 万剑归宗 = 3
+Break
+;---------------------------------------------
+[@Hero修炼3-3]
+#IF
+Hero.CHECKPULSEEXP 3 3
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 5
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 3
+goto @条件符合3-3
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为四重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合3-3]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 横扫千军 = 4
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 冰天雪地 = 4
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 万剑归宗 = 4
+Break
+;---------------------------------------------
+[@Hero修炼3-4]
+#IF
+Hero.CHECKPULSEEXP 3 4
+#ACT
+Hero.USEBONUSPOINT 12 + 1
+Hero.USEBONUSPOINT 10 + 1
+Hero.USEBONUSPOINT 14 + 9
+Hero.CHANGEPULSELEVEL 3 + 1
+Hero.DECPULSEEXP 3 4
+goto @条件符合3-4
+SendMsg 0 恭喜：<$HERONAME>的英雄%s，通过不懈的努力，将"任脉"升级为五重，连击招式运用更加纯熟。
+#ELSESAY
+很抱歉，你的英雄当前经络修炼点不够，请努力修炼！
+
+[@条件符合3-4]
+#IF
+Hero.CheckJob warrior
+#ACT
+Hero.SKILLLEVEL 横扫千军 = 5
+Break
+
+#IF
+Hero.CheckJob wizard
+#ACT
+Hero.SKILLLEVEL 冰天雪地 = 5
+Break
+
+#IF
+Hero.CheckJob taoist
+#ACT
+Hero.SKILLLEVEL 万剑归宗 = 5
+Break

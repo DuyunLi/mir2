@@ -1,0 +1,277 @@
+(@@sendmsg @storage @getback @buy @sell @repair @s_repair @@offlinemsg @storage @getback @getnextpage @getPreviouspage @@InPutString @PlayOffLine  @TakeOnX  @TakeOffX HITMON(@MUZHUANG)  )
+
+
+
+;穿戴时触发
+[@TakeOn1]
+
+
+
+;------------------------------------------------------
+;--攻击怪物时增加经验
+[@MUZHUANG]
+
+;下线
+[@PlayOffLine]
+#IF
+#ACT
+ MOVR P8 8
+ INC P8 330
+ MOVR P7 8
+ INC P7 330
+ mapmove 3 <$STR(P8)> <$STR(P7)>
+ OffLine 60000 1
+ set [300] 1
+ #if
+ CheckBagSize 1
+ #act
+ TakeEx 2
+
+[@KillPlay]
+#IF
+CHECKGAMEGIRD < 65534
+#ACT
+GAMEGIRD + 1
+GuildNoticeMsg 255 248  最新报道:【<$USERNAME>】在:%m(%x:%y)把【<$KILLER>】干掉了
+SendCenterMsg 0 223  [新闻联播]:%m(%x:%y)发生一起斗殴事件,犯罪嫌疑人[<$USERNAME>]为得到对方身上的道具,行凶砍伤多人,其中[<$KILLER>]因抢救无效死亡 1 10
+#ELSESAY
+天哪!你怎么可能杀了65535个人??
+
+;升级时触发
+[@PlayLevelUp]
+;====================================================
+
+;上线时触发
+[@PlayOffline]
+#IF
+InSafeZone
+#ACT
+Offline 5 3000
+
+
+
+[@回城复活]
+#IF
+checkgold 1
+#ACT
+Gmexecute ReAlive Self
+mapmove 3 333 333
+sendmsg 6 回程复活成功！
+#elsesay
+你没有1金币！
+
+
+
+[@StartMyShop]
+#IF
+CheckLevelEx < 30
+IsOnMap 3
+#SAY
+30级之后才可以在盟重使用摆摊功能.
+#ACT
+ForbidMyShop
+
+;----------------金条
+[@StdModeFunc1]
+#IF
+#ACT
+mov N0 1000000
+dec N0 20000
+mov S0 金条
+GIVE 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+;----------------金砖
+[@StdModeFunc2]
+#IF
+#ACT
+mov N0 5000000
+dec N0 100000
+mov S0 金砖
+GIVE 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+;----------------金盒
+[@StdModeFunc3]
+#IF
+#ACT
+mov N0 10000000
+dec N0 200000
+mov S0 金盒
+GIVE 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+;----------------元宝
+[@StdModeFunc4]
+#IF
+#ACT
+mov N0 10
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+
+[@StdModeFunc5]
+#IF
+#ACT
+mov N0 20
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+[@StdModeFunc6]
+#IF
+#ACT
+mov N0 50
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+
+[@StdModeFunc7]
+#IF
+#ACT
+mov N0 100
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+[@StdModeFunc8]
+#IF
+#ACT
+mov N0 200
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+
+[@StdModeFunc9]
+#IF
+#ACT
+mov N0 500
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+[@StdModeFunc10]
+#IF
+#ACT
+mov N0 1000
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+[@StdModeFunc11]
+#IF
+#ACT
+mov N0 1
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+[@StdModeFunc12]
+#IF
+#ACT
+mov N0 5
+mov S0 <$Str(N0)>元宝
+GameGold + <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>个元宝！
+break
+;宝箱
+
+[@StdModeFunc13]
+#IF
+#ACT
+movr N0 20000
+inc N0 0
+mov S0 杉木宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+
+[@StdModeFunc14]
+#IF
+#ACT
+movr N0 25000
+inc N0 15000
+mov S0 铜质宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+
+[@StdModeFunc15]
+#IF
+#ACT
+movr N0 100000
+inc N0 50000
+mov S0 白银宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+
+[@StdModeFunc16]
+#IF
+#ACT
+movr N0 130000
+inc N0 70000
+mov S0 黄金宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+[@StdModeFunc17]
+#IF
+#ACT
+movr N0 200000
+inc N0 100000
+mov S0 白金宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+[@StdModeFunc18]
+#IF
+#ACT
+movr N0 350000
+inc N0 150000
+mov S0 翡翠宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+[@StdModeFunc19]
+#IF
+#ACT
+movr N0 800000
+inc N0 200000
+mov S0 微光翡翠宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+[@StdModeFunc20]
+#IF
+#ACT
+movr N0 2500000
+inc N0 500000
+mov S0 闪亮翡翠宝箱
+Give 金币 <$Str(N0)>
+sendmsg 6 [提示]:%s,你使用了<$Str(S0)>,增加了<$Str(N0)>金币！
+break
+[@StdModeFunc21]
+#IF
+#ACT
+mapmove 3 326 326
+
+[@激情闭关泉水]
+#IF
+CHECKLEVELEX < 95
+#ACT
+SETONTIMER 5 1
+SENDMSG 0 恭喜[%s]成功占领泉眼，每秒获得20万经验！
+#ELSEACT
+SENDMSG 5 你的等级已经达到95级，不能在此占领了！
+
+[@GetBoxItem100]
+#if
+  equal s0 
+#act
+  sendmsg 5 你什么都没放进来!
+#elseact
+  give <$str(s0)> 1

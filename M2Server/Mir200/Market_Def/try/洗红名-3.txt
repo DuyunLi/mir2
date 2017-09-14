@@ -1,0 +1,20 @@
+[@main]
+你杀人了么?都这么红了\
+我可以帮你漂白了,只要10点声望一次\
+<元宝数量>：<$GAMEGOLD>  <当前声望>：<$CREDITPOINT>点  <泡点点数>：<$GAMEPOINT>点\
+<当前等级>：<$LEVEL>级  <当前经验>：<$EXP>  <当前升级经验>：<$MAXEXP>  \
+<阵亡次数>：<$HUMAN(RWSW)>次  <杀敌人数>：<$HUMAN(RWSR)>人  <当前PK点数>：<$PKPOINT>点\ 
+<好,我需要/@需要>    <我没声望>\
+[@需要]
+#IF
+CHECKCREDITPOINT > 9
+#act
+CREDITPOINT - 10
+CHANGEPKPOINT - 100
+SENDMSG  7   当前声望<$CREDITPOINT>点
+#SAY
+我已经帮你减轻你的罪孽!\ \
+『<返回首页/@main>』
+#ELSESAY
+对不起,你声望不够.\ \
+『<返回/@main>』

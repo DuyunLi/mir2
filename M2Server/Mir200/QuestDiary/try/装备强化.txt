@@ -1,0 +1,784 @@
+[@try.装备强化]
+{
+#act
+  mov s0
+  mov s1
+  mov s2
+  mov s3
+  mov s4
+  mov s5
+  mov s6
+  mov s7
+  mov s8
+  mov s9
+  mov s10
+  mov s11
+  mov s12
+  mov s13
+  mov s14
+  mov s15
+  mov s16
+  mov s17
+  mov s18
+  mov s19
+  mov s20
+  mov s21
+  mov s22
+  mov s23
+  mov s24
+  mov s25
+  mov s26
+  mov s27
+  mov s28
+  mov s29
+  mov s30
+  mov s31
+  mov s32
+  mov s33
+  mov s34
+  mov s35
+  mov s36
+  mov s37
+  mov s38
+  mov s39
+  mov s40
+  mov s41
+  mov s42
+  mov s43
+  mov s44
+  mov s45
+  mov s46
+  mov s47
+  mov s48
+  mov s49
+
+  mov n0
+  mov n1
+  mov n2
+  mov n3
+  mov n4
+  mov n5
+  mov n6
+  mov n7
+  mov n8
+  mov n9
+  mov n10
+  mov n11
+  mov n12
+  mov n13
+  mov n14
+  mov n15
+  mov n16
+  mov n17
+  mov n18
+  mov n19
+  mov n20
+  mov n21
+  mov n22
+  mov n23
+  mov n24
+  mov n25
+  mov n26
+  mov n27
+  mov n28
+  mov n29
+  mov n30
+  mov n31
+  mov n32
+  mov n33
+  mov n34
+  mov n35
+  mov n36
+  mov n37
+  mov n38
+  mov n39
+  mov n40
+  mov n41
+  mov n42
+  mov n43
+  mov n44
+  mov n45
+  mov n46
+  mov n47
+  mov n48
+  mov n49
+
+ GetUserItemName 0 0
+ GetUserItemName 1 1
+ GetUserItemName 2 2
+ GetUserItemName 3 3
+ GetUserItemName 4 4
+ GetUserItemName 5 5
+ GetUserItemName 6 6
+ GetUserItemName 7 7
+ GetUserItemName 8 8
+ GetUserItemName 9 9
+ GetUserItemName 10 10
+ GetUserItemName 11 11
+ GetUserItemName 12 12
+ mov S13 
+ goto @try.拼接装备强化字符串
+ goto @try.选择装备强化装备位置
+[@try.拼接装备强化字符串]
+#if
+ equal s0 
+#act
+ inc s13 　衣服:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　衣服:<
+ inc s13 <$str(s0)>
+ inc s13 /@try.装备强化选择
+ inc s13 衣服>　
+ inc s13 \
+
+#if
+ equal s1 
+#act
+ inc s13 　武器:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　武器:<
+ inc s13 <$str(s1)>
+ inc s13 /@try.装备强化选择
+ inc s13 武器>　
+ inc s13 \
+
+#if
+ equal s2
+#act
+ inc s13 　勋章:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　勋章:<
+ inc s13 <$str(s2)>
+ inc s13 /@try.装备强化选择
+ inc s13 勋章>
+ inc s13 \
+
+#if
+ equal s3 
+#act
+ inc s13 　项链:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　项链:<
+ inc s13 <$str(s3)>
+ inc s13 /@try.装备强化选择
+ inc s13 项链>　
+ inc s13 \
+
+#if
+ equal s4 
+#act
+ inc s13 　头盔:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　头盔:<
+ inc s13 <$str(s4)>
+ inc s13 /@try.装备强化选择
+ inc s13 头盔>　
+ inc s13 \
+
+#if
+ equal s5 
+#act
+ inc s13 右手镯:
+ inc s13 \
+#elseact
+ inc s13 右手镯:<
+ inc s13 <$str(s5)>
+ inc s13 /@try.装备强化选择
+ inc s13 右手镯>
+ inc s13 \
+#if
+ equal s6 
+#act
+ inc s13 左手镯:
+ inc s13 \
+#elseact
+ inc s13 左手镯:<
+ inc s13 <$str(s6)>
+ inc s13 /@try.装备强化选择
+ inc s13 左手镯>
+ inc s13 \
+#if
+ equal s7 
+#act
+ inc s13 右戒指:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 右戒指:<
+ inc s13 <$str(s7)>
+ inc s13 /@try.装备强化选择
+ inc s13 右戒指>　
+ inc s13 \
+#if
+ equal s8 
+#act
+ inc s13 左戒指:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 左戒指:<
+ inc s13 <$str(s8)>
+ inc s13 /@try.装备强化选择
+ inc s13 左戒指>　
+ inc s13 \
+#if
+ equal s9 
+#act
+ inc s13 护身符:
+ inc s13 \
+#elseact
+ inc s13 护身符:<
+ inc s13 <$str(s9)>
+ inc s13 /@try.装备强化选择
+ inc s13 护身符>
+ inc s13 \
+#if
+ equal s10 
+#act
+ inc s13 　腰带:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　腰带:<
+ inc s13 <$str(s10)>
+ inc s13 /@try.装备强化选择
+ inc s13 腰带>　
+ inc s13 \
+#if
+ equal s11 
+#act
+ inc s13 　靴子:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　靴子:<
+ inc s13 <$str(s11)>
+ inc s13 /@try.装备强化选择
+ inc s13 靴子>　
+ inc s13 \
+#if
+ equal s12 
+#act
+ inc s13 　宝石:　　　　　　　　
+ inc s13 \
+#elseact
+ inc s13 　宝石:<
+ inc s13 <$str(s12)>
+ inc s13 /@try.装备强化选择
+ inc s13 宝石>　
+ inc s13 \
+[@end]
+ 
+ [@try.选择装备强化装备位置]
+#if
+#act 
+ openbigdialogbox 1
+#say
+ \
+在这里可以将你的装备焕发更加强大的力量!\
+当前你的装备为: \
+ \
+<$str(s13)>
+[@end]
+
+
+[@try.装备强化选择衣服];0
+#act
+  mov s21 <$str(s0)>
+  mov n1 0
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择武器];1
+#act
+  mov s21 <$str(s1)>
+  mov n1 1
+  mov s22 　该部位只能强化攻击属性
+  mov n2 0
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择勋章];2
+#act
+  mov s21 <$str(s2)>
+  mov n1 2
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择项链];3
+#act
+  mov s21 <$str(s3)>
+  mov n1 3
+  mov s22 该部位只能强化攻击属性
+  mov n2 0
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择头盔];4
+#act
+  mov s21 <$str(s4)>
+  mov n1 4
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择右手镯];5
+#act
+  mov s21 <$str(s5)>
+  mov n1 5
+  mov s22 该部位只能强化攻击属性
+  mov n2 0
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择左手镯];6
+#act
+  mov s21 <$str(s6)>
+  mov n1 6
+  mov s22 该部位只能强化攻击属性
+  mov n2 0
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择右戒指];7
+#act
+  mov s21 <$str(s7)>
+  mov n1 7
+  mov s22 该部位只能强化攻击属性
+  mov n2 0
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择左戒指];8
+#act
+  mov s21 <$str(s8)>
+  mov n1 8
+  mov s22 该部位只能强化攻击属性
+  mov n2 0
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择护身符];9
+#act
+  mov s21 <$str(s9)>
+  mov n1 9
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择腰带];10
+#act
+  mov s21 <$str(s10)>
+  mov n1 10
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择靴子];11
+#act
+  mov s21 <$str(s11)>
+  mov n1 11
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+[@try.装备强化选择宝石];12
+#act
+  mov s21 <$str(s12)>
+  mov n1 12
+  mov s22 　
+  mov n2 1
+  goto @try.展示装备强化详细信息
+  Break
+[@end]
+
+
+[@try.初始化装备强化需要的东西]
+#act
+mov s30 攻击神石+1
+mov s31 攻击神石+2
+mov s32 攻击神石+3
+mov s33 攻击神石+4
+mov s34 攻击神石+5
+mov s35 防御神石+1
+mov s36 防御神石+2
+mov s37 防御神石+3
+mov s38 防御神石+4
+mov s39 防御神石+5
+mov s42 神佑宝石
+mov n10 1000000
+mov n11 1200000
+mov n12 1500000
+mov n13 1900000
+mov n14 2500000
+mov n15 1000000
+mov n16 1100000
+mov n17 1300000
+mov n18 1600000
+mov n19 2000000
+[@try.展示装备强化详细信息]
+#if
+ equal n2 0
+#act
+  goto @try.初始化装备强化需要的东西
+#say
+ \ \ \
+你当前选择的装备是:{<$str(s21)>/SCOLOR=245} {<$str(s22)>/SCOLOR=250}\
+使用{<$str(s42)>/SCOLOR=250}可以增加成功几率,背包有{<$str(s42)>/SCOLOR=250}<会被强制使用/SCOLOR=249> \ \
+<使用/@try.装备强化攻击+1>{<$str(s30)>+<$str(n10)>金币/SCOLOR=245},强化攻击力<1/SCOLOR=245>点,<无失败概率/SCOLOR=250>,最多强化4点\
+<使用/@try.装备强化攻击+2>{<$str(s31)>+<$str(n11)>金币/SCOLOR=245},强化攻击力<1~2/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败不会破损/SCOLOR=250>,最多强化7点 \
+<使用/@try.装备强化攻击+3>{<$str(s32)>+<$str(n12)>金币/SCOLOR=245},强化攻击力<1~3/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败不会破损/SCOLOR=250>,最多强化10点 \
+<使用/@try.装备强化攻击+4>{<$str(s33)>+<$str(n13)>金币/SCOLOR=245},强化攻击力<1~4/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败会破损/SCOLOR=249>　,最多强化35点 \
+<使用/@try.装备强化攻击+5>{<$str(s34)>+<$str(n14)>金币/SCOLOR=245},强化攻击力<1~5/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败会破损/SCOLOR=249>　,最多强化75点 \
+\ \ \ \ \ \ \
+<返回/@main>
+#elseact 
+  goto @try.初始化装备强化需要的东西
+#elsesay
+ \ \ \
+你当前选择的装备是:{<$str(s21)>/SCOLOR=245} {<$str(s22)>/SCOLOR=250}\
+使用{<$str(s42)>/SCOLOR=250}可以增加成功几率,背包有{<$str(s42)>/SCOLOR=250}<会被强制使用/SCOLOR=249> \ \
+<使用/@try.装备强化攻击+1>{<$str(s30)>+<$str(n10)>金币/SCOLOR=245},强化攻击力<1/SCOLOR=245>点,<无失败概率/SCOLOR=250>,最多强化3点\
+<使用/@try.装备强化攻击+2>{<$str(s31)>+<$str(n11)>金币/SCOLOR=245},强化攻击力<1~2/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败不会破损/SCOLOR=250>,最多强化6点 \
+<使用/@try.装备强化攻击+3>{<$str(s32)>+<$str(n12)>金币/SCOLOR=245},强化攻击力<1~3/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败不会破损/SCOLOR=250>,最多强化10点 \
+<使用/@try.装备强化攻击+4>{<$str(s33)>+<$str(n13)>金币/SCOLOR=245},强化攻击力<1~4/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败会破损/SCOLOR=249>　,最多强化35点 \
+<使用/@try.装备强化攻击+5>{<$str(s34)>+<$str(n14)>金币/SCOLOR=245},强化攻击力<1~5/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败会破损/SCOLOR=249>　,最多强化75点 \
+ \ \
+<使用/@try.装备强化防御+1>{<$str(s35)>+<$str(n15)>金币/SCOLOR=245},强化防御力<1/SCOLOR=245>点,<无失败概率/SCOLOR=250>,最多强化3点\
+<使用/@try.装备强化防御+2>{<$str(s36)>+<$str(n16)>金币/SCOLOR=245},强化防御力<1~2/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败不会破损/SCOLOR=250>,最多强化6点 \
+<使用/@try.装备强化防御+3>{<$str(s37)>+<$str(n17)>金币/SCOLOR=245},强化防御力<1~3/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败不会破损/SCOLOR=250>,最多强化10点 \
+<使用/@try.装备强化防御+4>{<$str(s38)>+<$str(n18)>金币/SCOLOR=245},强化防御力<1~4/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败会破损/SCOLOR=249>　,最多强化35点 \
+<使用/@try.装备强化防御+5>{<$str(s39)>+<$str(n19)>金币/SCOLOR=245},强化防御力<1~5/SCOLOR=245>点,<有失败概率/SCOLOR=249>,<失败会破损/SCOLOR=249>　,最多强化75点 \
+\ \
+
+<返回/@main>
+ 
+[@end]
+
+[@try.装备强化.神佑宝石加几率]
+#if
+  CheckItem <$str(s42)> 1
+  Large n23 0 
+#act
+  take <$str(s42)> 1
+  goto @try.装备强化.神佑宝石几率增加
+[@try.装备强化.神佑宝石几率增加]
+#if
+  equal n20 2
+#act
+  inc n28 21
+  SendMsg 6 你使用了<$str(s42)>,使成功几率增加20%.
+  break
+#if
+  equal n20 3
+#act
+  inc n28 20
+  SendMsg 6 你使用了<$str(s42)>,使成功几率增加20%.
+  break
+#if
+  equal n20 2
+#act
+  inc n28 10
+  SendMsg 6 你使用了<$str(s42)>,使成功几率增加15%.
+  break
+#if
+  equal n20 2
+#act
+  inc n28 5
+  SendMsg 6 你使用了<$str(s42)>,使成功几率增加10%.
+  break
+[@end]
+[@try.装备强化攻击+1]
+#act
+  mov n20 1
+  mov n21 <$str(n10)> 
+  mov n22 3
+  mov n23 0
+  mov n24 0
+  mov n28 101
+  mov n29 1
+  mov s40 <$str(s30)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取攻击力位置
+  goto @try.装备强化.判断点数
+[@end]
+
+[@try.装备强化攻击+2]
+#act
+  mov n20 2
+  mov n21 <$str(n11)> 
+  mov n22 6
+  mov n23 1
+  mov n24 0
+  mov n28 80
+  mov n29 1
+  mov s40 <$str(s31)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取攻击力位置
+  goto @try.装备强化.判断点数
+[@end]
+
+[@try.装备强化攻击+3]
+#act
+  mov n20 3
+  mov n21 <$str(n12)> 
+  mov n22 10
+  mov n23 1
+  mov n24 0
+  mov n28 50
+  mov n29 1
+  mov s40 <$str(s32)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取攻击力位置
+  goto @try.装备强化.判断点数
+[@end] 
+[@try.装备强化攻击+4]
+#act
+  mov n20 4
+  mov n21 <$str(n13)> 
+  mov n22 35
+  mov n23 1
+  mov n24 1
+  mov n28 35
+  mov n29 1
+  mov s40 <$str(s33)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取攻击力位置
+  goto @try.装备强化.判断点数 
+[@end]
+
+[@try.装备强化攻击+5]
+#act
+  mov n20 5
+  mov n21 <$str(n14)> 
+  mov n22 75
+  mov n23 1
+  mov n24 1
+  mov n28 25
+  mov n29 1
+  mov s40 <$str(s34)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取攻击力位置
+  goto @try.装备强化.判断点数 
+[@end]
+
+[@try.装备强化防御+1]
+#act
+  mov n20 1
+  mov n21 <$str(n15)> 
+  mov n22 3
+  mov n23 0
+  mov n24 0
+  mov n28 101
+  mov n29 2
+  mov s40 <$str(s35)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取防御力位置
+  goto @try.装备强化.判断点数
+[@end]
+
+[@try.装备强化防御+2]
+#act
+  mov n20 2
+  mov n21 <$str(n16)> 
+  mov n22 6
+  mov n23 1
+  mov n24 0
+  mov n28 80
+  mov n29 2
+  mov s40 <$str(s36)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取防御力位置
+  goto @try.装备强化.判断点数
+[@end]
+
+[@try.装备强化防御+3]
+#act
+  mov n20 3
+  mov n21 <$str(n17)> 
+  mov n22 10
+  mov n23 1
+  mov n24 0
+  mov n28 60
+  mov n29 2
+  mov s40 <$str(s37)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取防御力位置
+  goto @try.装备强化.判断点数
+[@end] 
+[@try.装备强化防御+4]
+#act
+  mov n20 4
+  mov n21 <$str(n18)> 
+  mov n22 35
+  mov n23 1
+  mov n24 1
+  mov n28 35
+  mov n29 2
+  mov s40 <$str(s38)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取防御力位置
+  goto @try.装备强化.判断点数 
+[@end]
+
+[@try.装备强化防御+5]
+#act
+  mov n20 5
+  mov n21 <$str(n19)> 
+  mov n22 75
+  mov n23 1
+  mov n24 1
+  mov n28 25
+  mov n29 2
+  mov s40 <$str(s39)>
+  mov s0
+  GetUserItemName <$str(n1)> 0
+  goto @try.装备强化.神佑宝石加几率
+  goto @try.初始化装备强化需要的东西
+  goto @try.装备强化.获取防御力位置
+  goto @try.装备强化.判断点数 
+
+[@try.装备强化.获取防御力位置]
+#act
+  mov n25 0
+  mov n26 1
+[@end]
+[@try.装备强化.获取攻击力位置]
+#if
+  equal n1 1
+#act
+  mov n25 0
+  mov n26 1
+  mov n27 2
+#elseact
+  mov n25 2
+  mov n26 3
+  mov n27 4
+[@end]
+[@try.装备强化.判断点数]
+#if
+  CheckItemAddValue <$str(n1)> <$str(n25)> < <$str(n22)>
+  CheckItem <$str(s40)> 1
+  equal s0 <$str(s21)>
+  checkgold <$str(n21)>
+#act
+  goto @try.装备强化.加点
+  goto @try.展示装备强化详细信息
+#elseact
+  goto @try.装备强化.条件失败
+  goto @try.展示装备强化详细信息
+[@end]
+
+[@try.装备强化.条件失败]
+#if
+  CheckItem <$str(s40)> 1
+#act
+  goto @try.装备强化.物品足够
+#elseact
+  SENDMSG 5 %s,你在逗我么,你根本没有<$str(s40)>,无法继续!
+[@end]
+
+[@try.装备强化.物品足够]
+#if
+  checkgold <$str(n21)>
+#act
+  goto @try.装备强化.金币足够
+#elseact
+  SENDMSG 5 %s,你在逗我么,你根本没有<$str(s21)>金币,无法继续!
+[@end]
+
+[@try.装备强化.金币足够]
+#if
+  CheckItemAddValue <$str(n1)> <$str(n25)> < <$str(n22)>
+#act
+  SENDMSG 5 %s,你在逗我么,你刚刚身上是[<$str(s21)>]怎么突然变卦了,你现在的装备是[<$str(s0)>]!
+#elseact
+  SENDMSG 5 %s,你在逗我么,你的[<$str(s21)>]已经强化了<$str(n22)>点,无法继续!
+[@end]
+
+
+[@try.装备强化.加点]
+#if
+  equal n23 0
+#act
+  take <$str(s40)> 1
+  take 金币 <$str(n21)>
+  goto @try.装备强化.成功加点
+  Break
+ #elseact
+  movr n30 100
+  take <$str(s40)> 1
+  take 金币 <$str(n21)>
+  goto @try.装备强化.加点随机
+[@end]
+[@try.装备强化.加点随机]
+#if
+  small n30 <$str(n28)>
+#act
+  goto @try.装备强化.成功加点
+#elseact
+  goto @try.装备强化.失败加点
+[@end]
+[@try.装备强化.失败加点]
+#if
+  equal n24 1
+#act
+  UpGradeItemEx <$str(n1)> <$str(n25)>  100 1 1
+#elseact
+  SendMsg 5 %s,装备升级失败!
+
+[@try.装备强化.成功加点]
+#if
+  equal n29 1
+#act
+  UpGradeItemEx <$str(n1)> <$str(n25)>  0 <$str(n20)> 0
+  UpGradeItemEx <$str(n1)> <$str(n26)>  0 <$str(n20)> 0
+  UpGradeItemEx <$str(n1)> <$str(n27)>  0 <$str(n20)> 0
+  SendCenterMsg 245 1 [装备强化]:%s使用了<$str(s40)>使[<$str(s21)>]变得更加强大 1
+  Break
+ 
+#if
+  equal n29 2
+#act
+  UpGradeItemEx <$str(n1)> <$str(n25)>  0 <$str(n20)> 0
+  UpGradeItemEx <$str(n1)> <$str(n26)>  0 <$str(n20)> 0
+  SendCenterMsg 245 1 [装备强化]:%s使用了<$str(s40)>使[<$str(s21)>]变得更加强大 1
+  Break
+
+}

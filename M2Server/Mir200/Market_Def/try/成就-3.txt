@@ -1,0 +1,10 @@
+
+[@main]
+#act
+  #call [..\QuestDiary\try\装备回收.txt] @try.回收装备
+
+
+
+
+
+;

@@ -1,0 +1,52 @@
+[@main]
+#IF
+#ACT
+  CloseBigDialogBox
+  goto @say
+
+[@say]
+#IF
+  CheckLevelEx > 99
+#ACT
+#SAY
+<$USERNAME>,我这里可以给你提供<转生/SCOLOR=151>服务　\
+　\
+最低需要<等级100级/SCOLOR=250>才能进行转生 \
+转生之后<等级降低5级/SCOLOR=253> \
+属性增加<可分配属性点增加200/SCOLOR=253> \
+　\
+确定现在开始转生吗?　\
+　\
+　　　　　　　　　　　　　　　　　　　<确定/@submit> 　   <取消/@Exit>
+#ELSEACT
+#ELSESAY
+<$USERNAME>,我这里可以给你提供<转生/SCOLOR=151>服务　\
+　\
+最低需要<等级100级/SCOLOR=249>才能进行转生 \
+转生之后<等级降低5级/SCOLOR=253> \
+属性增加<可分配属性点增加200/SCOLOR=253> \
+　\
+你的当前等级不足.　\
+你的当前等级为<$LEVEL>!　\
+请达到等级之后再来吧.　\
+
+;-- 确定转生
+[@submit]
+#IF
+  CheckLevelEx > 99
+#ACT
+  mov n0 0
+  movr n0 100
+  inc n0 50
+  ChangeLevel - 5
+  BonusPoint + <$str(n0)>
+  SendMsg 6 [天尊]:%s,你已经进行了一次转身,获得了可分配属性[<$str(n0)>],变得更加强大了
+  SendCenterMsg 245 0 [天尊]:%s进行了一次转生,获得了可分配属性[<$str(n0)>],大家恭喜他吧 1
+   Close 
+#ELSEACT
+  SendMsg 5 你现在的等级不足够!
+#ELSESAY
+　\
+<$USERNAME>,你的当前等级不足.　\
+你的当前等级为<$LEVEL>!　\
+请达到等级之后再来吧.　\

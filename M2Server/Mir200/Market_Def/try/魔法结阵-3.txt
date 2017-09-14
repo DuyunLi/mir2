@@ -1,0 +1,20 @@
+(@buy @sell @upgradenow @getbackupgnow @repair @s_repair @@InPutString @@InPutInteger @ReclaimItem )
+%100
++10
++11
++15
+[@main]
+#act
+  OpenItemBoxEx 100 0 请投入
+#say
+古老土城城主在玛法大陆设立了一个封印着的上古魔法结阵\
+此阵的威力及无数的神秘促使着很多英雄纷纷到此投放\
+<投放结阵可以获得:元宝.道具.经验.装备.宝石.等等!/SCOLOR=325>\
+
+<每次需要投入一件珍贵的装备/SCOLOR=245>\
+
+<当前上古魔法结阵为/SCOLOR=253><$STR(G256)><层!/SCOLOR=253>\ \
+
+<查看可投放装备/@try.查看可投放装备>
+
+[@try.查看可投放装备]

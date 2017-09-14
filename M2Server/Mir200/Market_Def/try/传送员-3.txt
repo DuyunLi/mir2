@@ -1,0 +1,4 @@
+[@main]
+#if
+#act
+#call [/try/´«ËÍÔ±.txt] @move

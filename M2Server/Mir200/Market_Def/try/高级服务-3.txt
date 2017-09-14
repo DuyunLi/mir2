@@ -1,0 +1,520 @@
+(@@sendmsg @bigstorage @biggetback @getnextpage @getPreviouspage)
+[@main]
+#act
+ closeBigDialogBox
+#say
+我可以帮你办一些你想不到的东西哦\
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<职业转换/@转职>』┆『<游戏广播/@广播>』┆『<游戏推广/@goto推广>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<金币兑换/@glod>』┆『<元宝兑换/@gamegold>』┆『<仓库服务/@gamecanku>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<属性觉醒/@属性觉醒>』┆『<装备强化/@装备强化>』┆『<装备查看/@装备查看>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+[@装备查看]
+#act
+ give 帝皇复活戒指 1   
+ give 漩涡复活戒指 1  
+ give 帝皇护身戒指 1   
+ give 漩涡护身戒指 1  
+ give 帝皇复活戒指 1   
+ give 漩涡复活戒指 1  
+ give 黑化腰带 1
+ give 惊梦战靴 1
+ give 龙鳞护手 1
+ give 霸王的永恒戒指 1
+ give 汲海 1
+ give 瀑流之眼 1
+ give 恨不逢(男) 1
+ give 莫问 1
+;N0 需要成为推广员等级,N1新人加入等级;N2奖励元宝;S0文件地址
+[@goto推广]
+#if
+#act
+mov N0 100
+mov N1 90
+mov N2 10000
+mov N3 <$Str(N0)>
+dec N3 1
+mov S0 ..\QuestDiary\try\data\spread.txt
+mov S1 ..\QuestDiary\try\data\be_spread.txt
+goto @推广
+
+[@推广]
+#if
+  CheckNameList <$str(S0)>
+#say
+为了让更多的人知道本游戏，也为了让你的朋友和你一起来游戏玩，\
+因此本服务器推出了玩家与玩家之间的互动活动，只要你有诚心、有\
+恒心、能坚持就能成为本游戏的最佳推广员，同时你也得最丰厚的回\
+报，如果你想在本游戏玩并且想成为最厉害的人物，当然厉害除了PK\
+以外的还有影响力、号召力等，因此这种机会千万不要错过！\
+{成功让新人加入可以获得<$str(n2)>元宝/AUTOCOLOR=250,100,180,47,253,50}\
+╔┄┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<成为推广员>』┆『<新人加入/@xinrenjiarutuiguang>』┆┆『<推广奖励/@tuiguangjiangli>』\
+╚┄┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+#elseact
+goto @推广Ex2
+
+[@推广Ex2]
+#say
+为了让更多的人知道本游戏，也为了让你的朋友和你一起来游戏玩，\
+因此本服务器推出了玩家与玩家之间的互动活动，只要你有诚心、有\
+恒心、能坚持就能成为本游戏的最佳推广员，同时你也得最丰厚的回\
+报，如果你想在本游戏玩并且想成为最厉害的人物，当然厉害除了PK\
+以外的还有影响力、号召力等，因此这种机会千万不要错过！\
+{成功让新人加入可以获得<$str(n2)>元宝/AUTOCOLOR=250,100,180,47,253,50}\
+╔┄┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<成为推广员/@jiarutuiguang>』┆『<新人加入/@xinrenjiarutuiguang>』┆┆『<推广奖励/@tuiguangjiangli>』\
+╚┄┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+[@xinrenjiarutuiguang]
+
+——————————————————————————————\
+非常感谢你对本游戏的支持，请问你现在发展的玩家在你的身边吗？\
+他的等级达到了<$str(N1)>级了吗？如果他达到这个级别了请和你面对面站\
+好，然后你选择下面的开始认证就行了。\
+——————————————————————————————\
+『<开始认证/@agree>』    『<我知道了/@exit>』    『<返回首页/@main>』
+
+[@tuiguangbianliang]
+
+#if
+#act
+mov N0 100
+mov N1 90
+mov N2 10000
+mov N3 <$Str(N0)>
+dec N3 1
+
+[@jiarutuiguang]
+#act
+goto @tuiguangbianliang
+goto @game推广1
+
+[@game推广1]
+#if
+  checklevelex > <$Str(N3)>
+#act
+  goto @game推广2
+#elseact
+  messagebox 对不起!虽然你有了为本游戏推广的决心\但是你的等级必须要大于[<$str(n3)>]级以后才能拥有此资格!
+  GOTO @推广
+
+[@game推广2]
+#if
+  CheckNameList ..\QuestDiary\try\data\spread.txt
+#act
+  messagebox 对不起!虽然你有了为本游戏推广的决心\但是你已经加入了推广员的行列!\
+  GOTO @推广
+#elseact
+  AddNameList ..\QuestDiary\try\data\spread.txt
+  messagebox 非常感谢你加入本游戏的推广服务,从现在起你\拉来的任何一个玩家只要达到[<$str(N1)>]你都可以得到一份奖励!
+  GOTO @推广
+  break
+
+
+
+[@agree]
+#if
+   checkposedir
+#elsesay
+你们二个面对面站好呀，不要乱动。\ \
+〖<返回/@main>〗
+#elseact
+break
+#if
+checknamelist ..\QuestDiary\try\data\spread.txt
+#elsesay
+你还没有申请加入推广员服务呢！\ \
+〖<返回/@main>〗
+#if
+checkposelevel > <$str(n1)>
+#act
+   master
+break
+#elsesay
+对不起！他还没有大于[<$Str(n1)>]级，无法进行下一步!\ \
+〖<返回/@main>〗
+[@StartGetMaster]
+现在正式开始验证对方是否已达到成功推广的要求\ \
+『<确认认证/@RequestMaster>』
+[@StartMaster]
+对方已经正式开始对你进行验证。\ \
+等你稍等，验证正在进行中.....\ \
+[@RequestMaster]
+#if
+#act
+mov p6 3
+   master requestmaster
+[@WateMaster]
+你已向对方请求验证，请耐心等待对方的答复。
+[@RevMaster]
+#act
+goto @tuiguangbianliang
+
+#IF
+checknamelist ..\QuestDiary\try\data\be_spread.txt
+#act
+break
+#say
+你的名单已经加入了，不能再加入到其他人的名下\ \
+〖<返回/@main>〗
+#IF
+checknamelist ..\QuestDiary\try\data\spread.txt
+#act
+break
+#say
+你的名字已经加入在推广员名单里了\ \
+不能再加入到其他人的名下\ \
+〖<返回/@main>〗
+#IF
+#say
+对方认为是他喊你来玩此游戏的，不知你是否认同？ \ \
+『<我同意/@ResposeMasterFail>』 \
+『<不同意/@exit>』
+[@ResposeMasterFail]
+#IF
+checknamelist  ..\QuestDiary\try\data\be_spread.txt
+#act
+break
+#say
+你的名单已经加入了，不能再加入到其他人的名下\ \
+〖<返回/@main>〗
+#if
+checkposelevel > <$str(n1)>
+#act
+ADDnamelist  ..\QuestDiary\try\data\be_spread.txt
+master responsemaster fail
+break
+#elsesay
+对不起！你的等级还没有大于[<$str(n1)>]级，\ \
+〖<返回/@main>〗
+[@EndMasterFail]
+#IF
+checknamelist ..\QuestDiary\try\data\spread.txt
+#act
+goto @领取推广奖励
+#elsesay
+已验证成功了！你以后一定也要对本游戏进推广\ \
+〖<关闭/@exit>〗
+
+[@领取推广奖励]
+#act
+GameGold + <$str(n2)>
+SendMsg 6 [天尊]:%s,你已经进行了一次推广,获得了大量奖励!
+SendCenterMsg 245 0 [天尊]:%s进行了一次推广,获得了大量奖励 1
+close
+
+
+[@广播]
+#IF
+#act
+mov N0 5
+mov N1 <#str(n0)>
+dec N1 1
+#say
+欢迎使用游戏数据的超级无敌刷屏喇叭,本道具不收取任何\ \
+费用,不限制地点,对发送不利于本传奇消息的玩家采取对其\ \
+<永久封IP>或<删除人物>处理\ \
+{每次发送广播都需要<$str(n0)>元宝/AUTOCOLOR=250,100,180,47,253,50}\
+<发送信息/@@sendmsg>\
+[@@sendmsg]
+#IF
+#act
+mov N0 5
+mov N1 <$str(n0)>
+dec N1 1
+goto @sendmsgEx
+[@sendmsgEx]
+#if
+CheckGameGold > <$str(n1)>
+#act
+GAMEGOLD - <$str(n0)>
+SETSENDMSGFLAG
+#elseact
+SENDMSG 6 每发送一次祝福需要消耗你<$str(n0)>个元宝！元宝可好东东哟~~
+close
+
+[@转职]
+作为战士您是否已经厌倦了烈火和半月呢？作为法师您是否不再喜\
+欢闪电和冰咆哮了呢？作为道士您是否不在只想做为别人的配角只\
+放宝宝和魔防了呢？OK！现在机会来了，为了满足您的要求，特提\
+供转职服务，当然天上是不会掉“馅饼”的，为了您PK的更爽，自\
+然您也得付出小小的代价.先看清楚下面的需知再做决定吧!\ \
+<转职必看/@zzbk>                       <暂时不转/@exit>
+
+[@zhuanzhibianliang]
+#act
+mov N0 1000
+mov N1 <$str(n0)>
+dec n1 1
+mov N2 45
+dec n2 1
+
+[@zzbk]
+#act
+goto @zhuanzhibianliang
+#say
+
+一:{需要等级<$str(n2)>以上才可以转职/AUTOCOLOR=250,100,180,47,253,50}\
+二:{转职需要<$str(n0)>元宝/AUTOCOLOR=250,100,180,47,253,50}\ \
+好了祝好运，快去体验那完全不一样的职业给您带来的快感吧。\ \
+<开始转职/@starchangejob> <暂时不转/@exit>
+
+[@starchangejob]
+
+#IF
+  CheckJob Taoist
+#ACT
+  CloseBigDialogBox
+#SAY
+<$USERNAME>,你的当前职业是<道士/SCOLOR=151> \
+　\
+当前可改变职业 \
+　\
+转职成为<战士/SCOLOR=250>,需要花费{<$str(n0)>元宝/SCOLOR=249}　　　　<确定转职成为战士/@Warrior> \
+　\
+转职成为<法师/SCOLOR=250>,需要花费{<$str(n0)>元宝/SCOLOR=249}　　　　<确定转职成为法师/@Wizard> \
+　\
+#IF
+  CheckJob Warrior
+#ACT
+  CloseBigDialogBox
+#SAY
+<$USERNAME>,你的当前职业是<战士/SCOLOR=151> \
+　\
+当前可改变职业 \
+　\
+转职成为<道士/SCOLOR=250>,需要花费{<$str(n0)>元宝/SCOLOR=249}　　　　<确定转职成为道士/@Taoist> \
+　\
+转职成为<法师/SCOLOR=250>,需要花费{<$str(n0)>元宝/SCOLOR=249}　　　　<确定转职成为法师/@Wizard> \
+　\
+#IF
+  CheckJob Wizard
+#ACT
+  CloseBigDialogBox
+#SAY
+<$USERNAME>,你的当前职业是<法师/SCOLOR=151> \
+　\
+当前可改变职业 \
+　\
+转职成为<道士/SCOLOR=250>,需要花费{<$str(n0)>元宝/SCOLOR=249}　　　　<确定转职成为道士/@Taoist> \
+　\
+转职成为<战士/SCOLOR=250>,需要花费{<$str(n0)>元宝/SCOLOR=249}　　　　<确定转职成为战士/@Warrior> \
+　\
+
+
+
+[@Warrior]
+#act
+goto @zhuanzhibianliang
+#IF
+CHECKGAMEGOLD > <$str(n1)>
+#ACT
+GAMEGOLD - <$str(n0)>
+CLEARSKILL  
+CHANGEJOB Warrior
+ADDSKILL 基本剑术 3
+ADDSKILL 攻杀剑术 3
+ADDSKILL 刺杀剑术 3
+ADDSKILL 半月弯刀 3
+ADDSKILL 烈火剑法 3
+ADDSKILL 野蛮冲撞 3
+#SAY
+伟大的传奇之神：亲爱的勇士您已经完成了转职，您现在是\
+一位伟大的战士了。\ \ \
+#elseact
+SENDMSG 6 对不起,你不符合转职条件
+[@Wizard]
+#act
+goto @zhuanzhibianliang
+#IF
+CHECKGAMEGOLD > <$str(n1)>
+#ACT
+GAMEGOLD - <$str(n0)>
+CLEARSKILL
+CHANGEJOB Wizard
+ADDSKILL 雷电术 3
+ADDSKILL 抗拒火环 3
+ADDSKILL 诱惑之光 3
+ADDSKILL 瞬息移动 3
+ADDSKILL 火墙 3
+ADDSKILL 疾光电影 3
+ADDSKILL 地狱雷光 3
+ADDSKILL 魔法盾 3
+ADDSKILL 圣言术 3
+ADDSKILL 冰咆哮 3
+#SAY
+伟大的传奇之神：亲爱的勇士您已经完成了转职，您现在是\
+一位伟大的魔法师了。\ \ \
+#elseact
+SENDMSG 6 对不起,你不符合转职条件
+[@Taoist]
+#act
+goto @zhuanzhibianliang
+#IF
+CHECKGAMEGOLD > <$str(n1)>
+#ACT
+GAMEGOLD - <$str(n0)>
+CLEARSKILL
+CHANGEJOB Taoist
+ADDSKILL 治愈术 3
+ADDSKILL 精神力战法 3
+ADDSKILL 施毒术 3
+ADDSKILL 灵魂火符 3
+ADDSKILL 隐身术 3
+ADDSKILL 集体隐身术 3
+ADDSKILL 幽灵盾 3
+ADDSKILL 神圣战甲术 3
+ADDSKILL 群体治疗术 3
+ADDSKILL 召唤骷髅 3
+#SAY
+伟大的传奇之神：亲爱的勇士您已经完成了转职，您现在是\
+一位伟大的道士了。\ \ \
+#elseact
+SENDMSG 6 对不起,你不符合转职条件
+[@gamecanku]
+
+您好。我是仓库保管员。这里存放的物品不受限制。\
+无论你有多少物品，我这里都可以存放进去。\
+<存放物品/@bigstorage>\
+<取回物品/@biggetback>\
+<返回/@main>　　<离开/@exit>\
+ 
+[@bigstorage]
+需要保管什么东西?\ \
+<返回/@gamecanku>
+[@biggetback]
+请看目录决定找什么东西.\ \
+<上一页/@getPreviouspage>　　<下一页/@getnextpage>　　<返回/@gamecanku>\
+[@getPreviouspage]
+#ACT
+goto @biggetback
+[@getnextpage]
+#ACT
+goto @biggetback
+[@glod]
+#say
+我这里可以提供金币兑换服务,每次需要收费2%手续费\
+
+╔┄┄┄┄┄┄╦┄┄┄┄┄┄╦┄┄┄┄┄┄╗\
+┆『<兑换金条/@兑换金条>』┆『<兑换金砖/@兑换金砖>』┆『<兑换金盒/@兑换金盒>』┆\
+╚┄┄┄┄┄┄╩┄┄┄┄┄┄╩┄┄┄┄┄┄╝\
+
+
+[@兑换金盒]
+#if
+ checkgold 10200000
+#act
+ take 金币 10200000
+ give 金盒 1
+ SENDMSG 6 你花费了10200000金币兑换了金盒*1
+ goto @glod
+#elseact
+ messagebox 你没有10200000金币,无法兑换
+ goto @glod
+
+[@兑换金条]
+#if
+ checkgold 1020000
+#act
+ take 金币 1020000
+ give 金条 1
+ SENDMSG 6 你花费了102000金币兑换了金条*1
+ goto @glod
+#elseact
+ messagebox 你没有1020000金币,无法兑换
+ goto @glod
+
+
+[@兑换金砖]
+#if
+ checkgold 5100000
+#act
+ take 金币 5100000
+ give 金砖 1
+ SENDMSG 6 你花费了5100000金币兑换了金砖*1
+ goto @glod
+#elseact
+ messagebox 你没有5100000金币,无法兑换
+ goto @glod
+
+[@gamegold]
+#say
+我这里可以提供元宝兑换服务,每次需要收费2%手续费\ \
+
+『<兑换20元宝/@兑换20元宝>』　 　『<兑换50元宝/@兑换50元宝>』 　　『<兑换100元宝/@兑换100元宝>』\ \
+
+『<兑换200元宝/@兑换200元宝>』　　『<兑换500元宝/@兑换500元宝>』　　『<兑换1000元宝/@兑换1000元宝>』\
+
+[@兑换1000元宝]
+#act
+mov n0 1000
+mov n1 <$str(n0)>
+dec n1 1
+mov s0 1000元宝
+mov n2 1
+goto @兑换元宝public
+[@兑换500元宝]
+#act
+mov n0 500
+mov n1 <$str(n0)>
+dec n1 1
+mov s0 500元宝
+mov n2 1
+goto @兑换元宝public
+
+[@兑换200元宝]
+#act
+mov n0 200
+mov n1 <$str(n0)>
+dec n1 1
+mov s0 200元宝
+mov n2 1
+goto @兑换元宝public
+[@兑换100元宝]
+#act
+mov n0 100
+mov n1 <$str(n0)>
+dec n1 1
+mov s0 100元宝
+mov n2 1
+goto @兑换元宝public
+[@兑换50元宝]
+#act
+mov n0 50
+mov n1 <$str(n0)>
+dec n1 1
+mov s0 50元宝
+mov n2 1
+goto @兑换元宝public
+[@兑换20元宝]
+#act
+mov n0 20
+mov n1 <$str(n0)>
+dec n1 1
+mov s0 20元宝
+mov n2 1
+goto @兑换元宝public
+
+
+[@兑换元宝public]
+#if
+CHECKGAMEGOLD > <$str(n1)>
+#ACT
+ GAMEGOLD - <$str(n0)>
+ Give <$str(s0)> <$str(n2)>
+ SENDMSG 6 你花费了<$str(n0)>元宝兑换了<$str(s0)>*<$str(n2)>
+ goto @gamegold
+#elseact
+ messagebox 你没有<$str(n0)>元宝,无法兑换
+ goto @gamegold
+
+[@装备强化]
+#call [..\QuestDiary\try\装备强化.txt] @try.装备强化
+
+[@属性觉醒]
+#call [..\QuestDiary\try\元素觉醒.txt] @try.元素觉醒

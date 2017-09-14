@@ -1,0 +1,473 @@
+
+[@try.回收装备]
+{
+#act
+ openbigdialogbox 1
+#say
+;在我这里完成一些任务可以增加自己的成就,获得更加强大的力量\
+ \
+在我这里可以回收各种强大的装备获得元宝 \
+<传奇套装/SCOLOR=250>     每件装备回收获得<5/SCOLOR=245>元宝    <我要回收/@try.回收1> \
+<皓月套装/SCOLOR=250>     每件装备回收获得<10/SCOLOR=245>元宝   <我要回收/@try.回收2> \
+<诛仙套装/SCOLOR=250>     每件装备回收获得<20/SCOLOR=245>元宝   <我要回收/@try.回收3> \
+<诛仙＊姦套装/SCOLOR=250> 每件装备回收获得<30/SCOLOR=245>元宝   <我要回收/@try.回收4> \
+<诛仙＊猋套装/SCOLOR=250> 每件装备回收获得<40/SCOLOR=245>元宝   <我要回收/@try.回收5> \
+<诛仙＊犇套装/SCOLOR=250> 每件装备回收获得<50/SCOLOR=245>元宝   <我要回收/@try.回收6> \
+<鸿蒙套装/SCOLOR=250>     每件装备回收获得<100/SCOLOR=245>元宝  <我要回收/@try.回收7> \
+
+[@try.回收7]
+#act
+goto @try.回收初始化变量
+ mov s0 鸿蒙印
+ mov n0 100
+ mov s1 鸿蒙头盔
+ mov n1 100
+ mov s2 鸿蒙项链
+ mov n2 100 
+ mov s3 鸿蒙戒指
+ mov n3 100 
+ mov s4 鸿蒙手镯
+ mov n4 100 
+ mov s5 鸿蒙腰带
+ mov n5 100 
+ mov s6 鸿蒙靴子
+ mov n6 100 
+ mov s7 鸿蒙神镯
+ mov n7 100 
+ mov s8 鸿蒙神戒
+ mov n8 100
+ mov s9 鸿蒙神刃
+ mov n9 100
+ mov s10 鸿蒙神铠(女)
+ mov n10 100
+ mov s11 鸿蒙神铠(男)
+ mov n11 100
+ mov s12 
+ mov n12 100
+ mov s13 
+ mov n13 100
+ mov s14 
+ mov n14 100
+ mov s15 
+ mov n15 100
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+
+[@try.回收6]
+#act
+goto @try.回收初始化变量
+ mov s0 诛仙头盔＊犇
+ mov n0 50 
+ mov s1 诛仙项链＊犇
+ mov n1 50
+ mov s2 诛仙戒指＊犇
+ mov n2 50 
+ mov s3 诛仙护腕＊犇
+ mov n3 50 
+ mov s4 诛仙腰带＊犇
+ mov n4 50 
+ mov s5 诛仙之靴＊犇
+ mov n5 50 
+ mov s6 诛仙印＊犇
+ mov n6 50 
+ mov s7 诛仙魔杖＊犇
+ mov n7 50 
+ mov s8 诛仙宝剑＊犇
+ mov n8 50
+ mov s9 诛仙战刃＊犇
+ mov n9 50
+ mov s10 诛仙战甲(女)＊犇
+ mov n10 50
+ mov s11 诛仙战甲(男)＊犇
+ mov n11 50
+ mov s12 诛仙道袍(女)＊犇
+ mov n12 50
+ mov s13 诛仙道袍(男)＊犇
+ mov n13 50
+ mov s14 诛仙魔衣(女)＊犇
+ mov n14 50
+ mov s15 诛仙魔衣(男)＊犇
+ mov n15 50
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+[@try.回收5]
+#act
+goto @try.回收初始化变量
+ mov s0 诛仙头盔＊猋
+ mov n0 40 
+ mov s1 诛仙项链＊猋
+ mov n1 40
+ mov s2 诛仙戒指＊猋
+ mov n2 40 
+ mov s3 诛仙护腕＊猋
+ mov n3 40 
+ mov s4 诛仙腰带＊猋
+ mov n4 40 
+ mov s5 诛仙之靴＊猋
+ mov n5 40 
+ mov s6 诛仙印＊猋
+ mov n6 40 
+ mov s7 诛仙魔杖＊猋
+ mov n7 40 
+ mov s8 诛仙宝剑＊猋
+ mov n8 40
+ mov s9 诛仙战刃＊猋
+ mov n9 40
+ mov s10 诛仙战甲(女)＊猋
+ mov n10 40
+ mov s11 诛仙战甲(男)＊猋
+ mov n11 40
+ mov s12 诛仙道袍(女)＊猋
+ mov n12 40
+ mov s13 诛仙道袍(男)＊猋
+ mov n13 40
+ mov s14 诛仙魔衣(女)＊猋
+ mov n14 40
+ mov s15 诛仙魔衣(男)＊猋
+ mov n15 40
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+[@try.回收4]
+#act
+goto @try.回收初始化变量
+ mov s0 诛仙头盔＊姦
+ mov n0 30 
+ mov s1 诛仙项链＊姦
+ mov n1 30
+ mov s2 诛仙戒指＊姦
+ mov n2 30 
+ mov s3 诛仙护腕＊姦
+ mov n3 30 
+ mov s4 诛仙腰带＊姦
+ mov n4 30 
+ mov s5 诛仙之靴＊姦
+ mov n5 30 
+ mov s6 诛仙印＊姦
+ mov n6 30 
+ mov s7 诛仙魔杖＊姦
+ mov n7 30 
+ mov s8 诛仙宝剑＊姦
+ mov n8 30
+ mov s9 诛仙战刃＊姦
+ mov n9 30
+ mov s10 诛仙战甲(女)＊姦
+ mov n10 30
+ mov s11 诛仙战甲(男)＊姦
+ mov n11 30
+ mov s12 诛仙道袍(女)＊姦
+ mov n12 30
+ mov s13 诛仙道袍(男)＊姦
+ mov n13 30
+ mov s14 诛仙魔衣(女)＊姦
+ mov n14 30
+ mov s15 诛仙魔衣(男)＊姦
+ mov n15 30
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+[@try.回收3]
+#act
+goto @try.回收初始化变量
+ mov s0 诛仙头盔
+ mov n0 20 
+ mov s1 诛仙项链
+ mov n1 20
+ mov s2 诛仙戒指
+ mov n2 20 
+ mov s3 诛仙护腕
+ mov n3 20 
+ mov s4 诛仙腰带
+ mov n4 20 
+ mov s5 诛仙之靴
+ mov n5 20 
+ mov s6 诛仙印
+ mov n6 20 
+ mov s7 诛仙魔杖
+ mov n7 20 
+ mov s8 诛仙宝剑
+ mov n8 20
+ mov s9 诛仙战刃
+ mov n9 20
+ mov s10 诛仙战甲(女)
+ mov n10 20
+ mov s11 诛仙战甲(男)
+ mov n11 20
+ mov s12 诛仙道袍(女)
+ mov n12 20
+ mov s13 诛仙道袍(男)
+ mov n13 20
+ mov s14 诛仙魔衣(女)
+ mov n14 20
+ mov s15 诛仙魔衣(男)
+ mov n15 20
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+;传奇套装
+[@try.回收2]
+#act
+goto @try.回收初始化变量
+ mov s0 皓月之冠
+ mov n0 10 
+ mov s1 皓月项链
+ mov n1 10 
+ mov s2 皓月之戒
+ mov n2 10 
+ mov s3 皓月护腕
+ mov n3 10 
+ mov s4 皓月腰带
+ mov n4 10 
+ mov s5 皓月之靴
+ mov n5 10
+ mov s6 皓月魔杖
+ mov n6 10
+ mov s7 皓月羽扇
+ mov n7 10
+ mov s8 皓月神剑
+ mov n8 10
+ mov s9 皓月神甲(男)
+ mov n9 10
+ mov s10 皓月神甲(女)
+ mov n10 10
+ mov s11 皓月印
+ mov n11 10
+ mov s12 
+ mov n12 10
+ mov s13 
+ mov n13 10
+ mov s14 
+ mov n14 10
+ mov s15
+ mov n15 10
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+ 
+;传奇套装
+[@try.回收1]
+#act
+goto @try.回收初始化变量
+ mov s0 传奇之冠
+ mov n0 5
+ mov s1 传奇项链
+ mov n1 5
+ mov s2 传奇之戒
+ mov n2 5
+ mov s3 传奇护腕
+ mov n3 5
+ mov s4 传奇腰带
+ mov n4 5
+ mov s5 传奇之靴
+ mov n5 5
+ mov s6 传奇神杖
+ mov n6 5
+ mov s7 传奇神扇
+ mov n7 5
+ mov s8 传奇神剑
+ mov n8 5
+ mov s9 传奇神甲(男)
+ mov n9 5
+ mov s10 传奇神甲(女)
+ mov n10 5
+ mov s11 传奇印
+ mov n11 5
+ mov s12 
+ mov n12 5
+ mov s13 
+ mov n13 5
+ mov s14 
+ mov n14 5
+ mov s15 
+ mov n15 5
+ mov n20 0
+ mov n21 0
+ goto @try.开始回收
+ goto @try.回收得到物品
+
+[@try.开始回收]
+#if
+equal s0
+#elseact
+mov s21 <$str(s0)>
+mov n22 <$str(n0)>
+goto @try.回收计算
+
+
+#if
+equal s1
+#elseact
+mov s21 <$str(s1)>
+mov n22 <$str(n1)>
+goto @try.回收计算
+
+#if
+equal s2
+#elseact
+mov s21 <$str(s2)>
+mov n22 <$str(n2)>
+goto @try.回收计算
+
+#if
+equal s3
+#elseact
+mov s21 <$str(s3)>
+mov n22 <$str(n3)>
+goto @try.回收计算
+
+#if
+equal s4
+#elseact
+mov s21 <$str(s4)>
+mov n22 <$str(n4)>
+goto @try.回收计算
+
+#if
+equal s5
+#elseact
+mov s21 <$str(s5)>
+mov n22 <$str(n5)>
+goto @try.回收计算
+
+#if
+equal s6
+#elseact
+mov s21 <$str(s6)>
+mov n22 <$str(n6)>
+goto @try.回收计算
+
+#if
+equal s7
+#elseact
+mov s21 <$str(s7)>
+mov n22 <$str(n7)>
+goto @try.回收计算
+
+#if
+equal s8
+#elseact
+mov s21 <$str(s8)>
+mov n22 <$str(n8)>
+goto @try.回收计算
+#if
+equal s9
+#elseact
+mov s21 <$str(s9)>
+mov n22 <$str(n9)>
+goto @try.回收计算
+#if
+equal s10
+#elseact
+mov s21 <$str(s10)>
+mov n22 <$str(n10)>
+goto @try.回收计算
+#if
+equal s11
+#elseact
+mov s21 <$str(s11)>
+mov n22 <$str(n11)>
+goto @try.回收计算
+#if
+equal s12
+#elseact
+mov s21 <$str(s12)>
+mov n22 <$str(n12)>
+goto @try.回收计算
+#if
+equal s13
+#elseact
+mov s21 <$str(s13)>
+mov n22 <$str(n13)>
+goto @try.回收计算
+#if
+equal s14
+#elseact
+mov s21 <$str(s14)>
+mov n22 <$str(n14)>
+goto @try.回收计算
+
+#if
+equal s15
+#elseact
+mov s21 <$str(s15)>
+mov n22 <$str(n15)>
+goto @try.回收计算
+[@try.回收计算]
+#if
+checkitem <$str(s21)> 1
+#act
+take <$str(s21)> 1
+inc n20 <$str(n22)>
+inc n21 1
+[@try.回收得到物品]
+#if
+ Large n21 0
+#act
+GameGold + <$srt(n20)>
+SendMsg 5 %s,你一共回收<$srt(n21)>件物品,获得了<$srt(n20)>元宝
+
+[@try.回收初始化变量]
+#act
+ mov s0 
+ mov n0 
+ mov s1 
+ mov n1 
+ mov s2 
+ mov n2 
+ mov s3 
+ mov n3 
+ mov s4 
+ mov n4 
+ mov s5 
+ mov n5 
+ mov s6 
+ mov n6 
+ mov s7 
+ mov n7 
+ mov s8 
+ mov n8 
+ mov s9 
+ mov n9 
+ mov s10
+ mov n10
+ mov s11
+ mov n11
+ mov s12
+ mov n12 
+ mov s13
+ mov n13 
+ mov s14 
+ mov n14 
+ mov s15 
+ mov n15 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;十个任务
+;三种掉落
+;等级
+;三个击杀boss
+;专属成就任务
+;
